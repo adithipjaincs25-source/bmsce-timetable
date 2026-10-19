@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMSCE Live Timetable Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="app-header">
+        <div class="header-title">
+            <h1>BMSCE CSE</h1>
+            <p>Live Timetable Tracker</p>
+        </div>
+        <div class="menu-container">
+            <button id="menu-btn" class="dots-btn" aria-label="Menu">&#8942;</button>
+            <div id="dropdown-menu" class="dropdown hidden">
+                <button id="btn-change-section">Switch Section / Role</button>
+                <button id="btn-change-name">Update Name</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="app-content">
+
+        <!-- SCREEN 0: Name Onboarding -->
+        <section id="name-setup-screen" class="card-screen">
+            <h2>Welcome!</h2>
+            <p>Enter your name to customize your schedule tracker.</p>
+            <form id="name-form">
+                <div class="form-group">
+                    <label for="user-name-input">Your Name:</label>
+                    <input type="text" id="user-name-input" placeholder="e.g. Adithi" required autocomplete="off">
+                </div>
+                <button type="submit" class="btn btn-primary">Continue &rarr;</button>
+            </form>
+        </section>
+
+        <!-- SCREEN 1: Role Selection -->
+        <section id="role-select-screen" class="card-screen hidden">
+            <h2 id="role-welcome-heading">Hello!</h2>
+            <p>Select your operational mode below.</p>
+            <div class="button-group">
+                <button id="select-student-btn" class="btn btn-primary btn-glow">Student View</button>
+                <button id="select-teacher-btn" class="btn btn-secondary">Teacher / Admin View</button>
+            </div>
+        </section>
+
+        <!-- SCREEN 2: Student Setup (With Official Document Section Codes) -->
+        <section id="student-setup-screen" class="card-screen hidden">
+            <h2>Select Your Section</h2>
+            <form id="student-form">
+                <div class="form-group">
+                    <label for="section-select">Section:</label>
+                    <select id="section-select" required>
+                        <option value="" disabled selected>-- Select Section --</option>
+                        <optgroup label="3rd Semester">
+                            <option value="3B1">3B1 [3D]</option>
+                            <option value="3B2">3B2 [3G]</option>
+                            <option value="3B3">3B3 [3N]</option>
+                            <option value="3B4">3B4 [3Q]</option>
+                            <option value="3B5">3B5 [3V]</option>
+                        </optgroup>
+                        <optgroup label="5th Semester">
+                            <option value="5B1">5B1 [5D]</option>
+                            <option value="5B2">5B2 [5G]</option>
+                            <option value="5B3">5B3 [5N]</option>
+                            <option value="5B4">5B4 [5O]</option>
+                            <option value="5B5">5B5 [5V]</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-glow">Save & View Schedule</button>
+            </form>
+        </section>
+
+        <!-- SCREEN 3: Student Dashboard -->
+        <section id="student-dashboard" class="card-screen hidden">
+            <div class="greeting-banner">
+                <h2 id="student-greeting">Hello!</h2>
+                <p>Section <span id="display-section-name">--</span></p>
+            </div>
+
+            <!-- Day Selector Tabs -->
+            <div class="day-tabs-container">
+                <button class="day-tab active" data-day="LIVE">Live Now</button>
+                <button class="day-tab" data-day="Monday">Mon</button>
+                <button class="day-tab" data-day="Tuesday">Tue</button>
+                <button class="day-tab" data-day="Wednesday">Wed</button>
+                <button class="day-tab" data-day="Thursday">Thu</button>
+                <button class="day-tab" data-day="Friday">Fri</button>
+                <button class="day-tab" data-day="Saturday">Sat</button>
+            </div>
+
+            <!-- Live Card View -->
+            <div id="live-view-block">
+                <div class="status-badge">
+                    <span id="student-day-time">Loading...</span>
+                </div>
+                <div class="live-card">
+                    <p class="label">CURRENT CLASS & LOCATION</p>
+                    <h3 id="live-class-name">Fetching current class...</h3>
+                </div>
+                <button id="refresh-student-btn" class="btn btn-outline">Refresh Live Location</button>
+            </div>
+
+            <!-- Full Day Schedule List View -->
+            <div id="day-schedule-block" class="hidden">
+                <h4 id="selected-day-title" class="schedule-title">Monday Timetable</h4>
+                <div id="day-schedule-list" class="schedule-list">
+                    <!-- Populated dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SCREEN 4: Admin Password Modal -->
+        <div id="password-modal" class="modal hidden">
+            <div class="modal-content">
+                <h3>Admin Authentication</h3>
+                <p>Enter administrative credentials for department overview.</p>
+                <input type="password" id="admin-password" placeholder="Enter Password">
+                <p id="password-error" class="error-text hidden">Incorrect password. Try again.</p>
+                <div class="modal-actions">
+                    <button id="cancel-password-btn" class="btn btn-secondary">Cancel</button>
+                    <button id="submit-password-btn" class="btn btn-primary">Login</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCREEN 5: Teacher/Admin Live Dashboard -->
+        <section id="teacher-dashboard" class="card-screen hidden">
+            <div class="greeting-banner">
+                <h2 id="teacher-greeting">Hello!</h2>
+                <p>Department Live Status</p>
+            </div>
+            <div class="dashboard-header">
+                <span id="teacher-day-time" class="status-badge">Loading...</span>
+            </div>
+            
+            <div class="table-container">
+                <table class="live-table">
+                    <thead>
+                        <tr>
+                            <th>Section</th>
+                            <th>Current Class / Room</th>
+                        </tr>
+                    </thead>
+                    <tbody id="teacher-table-body">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+            <button id="refresh-teacher-btn" class="btn btn-outline">Refresh All Sections</button>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

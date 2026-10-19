@@ -1,0 +1,397 @@
+{
+  "3B1": {
+    "Monday": {
+      "08:00": "DMS [201]",
+      "08:55": "DLCO [606]",
+      "10:20": "DBMS [606]",
+      "11:15": "DS [606]",
+      "12:10": "DIP-MATH(A)",
+      "14:00": "FSD LAB [AIDS LAB] (B1-SVH, B2-MJ, B3-FAS, B4-MRP)"
+    },
+    "Tuesday": {
+      "08:00": "DMS [204]",
+      "08:55": "DS [5-ISE-504]",
+      "10:20": "DIP-MATH(A)",
+      "11:15": "DS LAB [LAB-501] (B1-BSS, B2-PCV, B3-VS, B4-AMS)",
+      "14:00": "DS [603 A]",
+      "14:55": "DBMS [603 A]",
+      "15:50": "OOPS [603 A]"
+    },
+    "Wednesday": {
+      "08:00": "DLCO [204]",
+      "08:55": "OOPS [204]",
+      "10:20": "OOPS [206]",
+      "11:15": "DLCO [206]",
+      "12:10": "Seminar / Workshop / Proctor Meet",
+      "14:00": "DBMS LAB [LAB-502] (B1-EN, B2-PGP, B3-MMP, B4-STL)"
+    },
+    "Thursday": {
+      "08:00": "DMS [204]",
+      "08:55": "DMS-T [204]",
+      "10:20": "DIP-MATH(A)",
+      "11:15": "OOPS LAB [LAB-501] (B1-MMP, B2-SYT, B3-MRN, B4-YGM)"
+    },
+    "Friday": {
+      "08:00": "Holiday / No Class Scheduled",
+      "14:00": "DBMS [205]"
+    },
+    "Saturday": {
+      "08:00": "Holiday / No Class Scheduled"
+    },
+    "Sunday": {
+      "08:00": "Holiday"
+    }
+  },
+  "3B2": {
+    "Monday": {
+      "08:00": "DBMS [ISE 501]",
+      "08:55": "DMS [ISE 501]",
+      "10:20": "FSD LAB [LAB-3] (B1-ASG, B2-STL, B3-KTJ, B4-PCH)",
+      "14:00": "DS [204]",
+      "14:55": "DLCO [204]",
+      "15:50": "OOPS [204]"
+    },
+    "Tuesday": {
+      "08:00": "DS [7F-MBA-CR2]",
+      "08:55": "DLCO [7F-MBA-CR2]",
+      "10:20": "OOPS [7F-MBA-CR2]",
+      "11:15": "DLCO [201]",
+      "12:10": "DMS-T [201]",
+      "14:00": "DBMS LAB [LAB-3] (B1-EN, B2-SYT, B3-MAT, B4-TD)"
+    },
+    "Wednesday": {
+      "08:00": "OOPS [205]",
+      "08:55": "DBMS [205]",
+      "10:20": "OOPS LAB [LAB-501] (B1-PK, B2-YGM, B3-KTJ, B4-FAS)",
+      "14:00": "DS [213]"
+    },
+    "Thursday": {
+      "08:00": "DMS [405 APS]",
+      "14:00": "DBMS [214]",
+      "14:55": "DMS [403 APS]",
+      "15:50": "Seminar / Workshop / Proctor Meet [204]"
+    },
+    "Friday": {
+      "08:00": "DS LAB [ICB LAB] (B1-AMS, B2-BSS, B3-MAT, B4-MAT)",
+      "14:00": "DIP-MATH(A)",
+      "14:55": "DIP-MATH(A)",
+      "15:50": "DIP-MATH(A)"
+    },
+    "Saturday": {
+      "08:00": "Holiday / No Class Scheduled"
+    },
+    "Sunday": {
+      "08:00": "Holiday"
+    }
+  },
+  "3B3": {
+    "Monday": {
+      "08:00": "DBMS [204]",
+      "08:55": "DMS_T [5-ISE-504]",
+      "10:20": "DS [206]",
+      "11:15": "DBMS [201]",
+      "12:10": "OOPS [205]",
+      "14:00": "FSD LAB [LAB-3] (B1-MAT, B2-MMP, B3-MNH, B4-ADI)"
+    },
+    "Tuesday": {
+      "08:00": "OOPS [206]",
+      "10:20": "OOPS LAB [LAB-502] (B1-MNH, B2-MMP, B3-SA, B4-MAT)",
+      "14:00": "DMS [205]",
+      "14:55": "Seminar / Workshop / Proctor Meet"
+    },
+    "Wednesday": {
+      "08:00": "DLCO [106]",
+      "08:55": "DLCO [204]",
+      "10:20": "DS LAB [CSDS LAB2] (B1-PCV, B2-SDS, B3-AMS, B4-SVH)"
+    },
+    "Thursday": {
+      "08:00": "DBMS [201]",
+      "10:20": "OOPS [206]",
+      "11:15": "DS [205]"
+    },
+    "Friday": {
+      "08:00": "DMS [201]",
+      "08:55": "DBMS LAB [LAB-3] (B1-PGP, B2-SGG, B3-MAT, B4-MAT)",
+      "11:15": "DS [206]",
+      "12:10": "DLCO [5-ISE-504]",
+      "14:00": "DIP-MATH(B)",
+      "14:55": "DIP-MATH(B)"
+    },
+    "Saturday": {
+      "08:00": "DMS [205]"
+    },
+    "Sunday": {
+      "08:00": "Holiday"
+    }
+  },
+  "3B4": {
+    "Monday": {
+      "08:00": "DMS_T [206]",
+      "10:20": "DBMS [201]",
+      "11:15": "DS [205]",
+      "12:10": "FSD LAB [LAB-501] (B1-VS, B2-PGP, B3-MRN, B4-MRN)"
+    },
+    "Tuesday": {
+      "08:00": "DMS [205]",
+      "08:55": "OOPS [206]",
+      "10:20": "DBMS LAB [LAB-501] (B1-PGP, B2-PGP, B3-PCH, B4-ARP)",
+      "14:00": "DS [602]",
+      "14:55": "DLCO [602]",
+      "15:50": "DMS [602]"
+    },
+    "Wednesday": {
+      "08:00": "DS LAB [LAB 3] (B1-PCV, B2-VS, B3-AMS, B4-MRN)",
+      "11:15": "DBMS [5-ISE-504]",
+      "14:00": "OOPS [201]",
+      "14:55": "Seminar / Workshop / Proctor Meet",
+      "15:50": "DS [201]"
+    },
+    "Thursday": {
+      "08:00": "OOPS [201]",
+      "08:55": "DBMS [201]",
+      "11:15": "DLCO [5-ISE-504]",
+      "12:10": "DLCO [408]"
+    },
+    "Friday": {
+      "08:00": "DMS [ISE 501]",
+      "10:20": "OOPS LAB [LAB-502] (B1-MMP, B2-PK, B3-SA, B4-STL)",
+      "14:00": "DIP-MATH(B)",
+      "14:55": "DIP-MATH(B)"
+    },
+    "Saturday": {
+      "08:00": "Holiday / No Class Scheduled"
+    },
+    "Sunday": {
+      "08:00": "Holiday"
+    }
+  },
+  "3B5": {
+    "Monday": {
+      "08:00": "OOPS [201]",
+      "08:55": "DLCO [204]",
+      "10:20": "DS [216]",
+      "11:15": "DBMS [216]",
+      "12:10": "DMS [216]"
+    },
+    "Tuesday": {
+      "08:00": "DS [206]",
+      "08:55": "DLCO [206]",
+      "10:20": "OOPS LAB [LAB-3] (B1-PK, B2-SVA, B3-SGG, B4-SGG)",
+      "12:10": "Seminar / Workshop / Proctor Meet",
+      "14:00": "DMS_T [5-ISE-504]"
+    },
+    "Wednesday": {
+      "08:00": "OOPS [205]",
+      "08:55": "DBMS [201]",
+      "10:20": "DS LAB [LAB 501] (B1-BSS, B2-KTJ, B3-STL, B4-FAS)",
+      "12:10": "DLCO [601]",
+      "14:00": "DMS [205]"
+    },
+    "Thursday": {
+      "08:55": "OOPS [206]",
+      "10:20": "FSD LAB [LAB-504] (B1-PGP, B2-SVH, B3-ARP, B4-NTJ)",
+      "14:00": "DIP-MATH(B)",
+      "14:55": "DIP-MATH(B)"
+    },
+    "Friday": {
+      "08:55": "DBMS [205]",
+      "10:20": "DMS [201]",
+      "11:15": "DS [205]",
+      "12:10": "DBMS LAB [LAB-3] (B1-SGG, B2-SYT, B3-SVA, B4-KBK)"
+    },
+    "Saturday": {
+      "08:00": "Holiday / No Class Scheduled"
+    },
+    "Sunday": {
+      "08:00": "Holiday"
+    }
+  },
+  "5B1": {
+    "Monday": {
+      "09:50": "DEV [201]",
+      "10:45": "OOMD [201]",
+      "11:15": "Professional Elective (PE)",
+      "12:10": "BIS LAB [Lab-3] (B1-SYT, B2-RM, B3-MMP, B4-PGP)"
+    },
+    "Tuesday": {
+      "09:50": "AI [205]",
+      "10:45": "CN [205]",
+      "11:15": "Professional Elective (PE)",
+      "12:10": "DEV [206]",
+      "13:05": "OOMD [206]"
+    },
+    "Wednesday": {
+      "09:50": "OOMD LAB [Lab-501] (B1-SVA, B2-SYT, B3-FAS, B4-FAS)",
+      "14:00": "AI [205]",
+      "14:55": "CN [205]"
+    },
+    "Thursday": {
+      "09:50": "CN LAB [Lab-501] (B1-YGM, B2-YGM, B3-KTJ, B4-AHM)",
+      "11:15": "Professional Elective (PE)",
+      "12:10": "CN [206]"
+    },
+    "Friday": {
+      "09:50": "Seminar / Workshop / Proctor Meet",
+      "10:45": "CC LAB [Lab-3] (B1-MNH, B2-PRS)",
+      "12:10": "DEV-T [204]",
+      "14:00": "AI [209]",
+      "14:55": "AI LAB [Lab1-2] (B1-SWS, B2-KTJ, B3-FAS, B4-KTJ)"
+    },
+    "Saturday": {
+      "08:00": "Holiday / No Class Scheduled"
+    },
+    "Sunday": {
+      "08:00": "Holiday"
+    }
+  },
+  "5B2": {
+    "Monday": {
+      "08:00": "CC LAB [Lab-502] (B1-KTJ, B2-PCV)",
+      "08:55": "Professional Elective (PE)",
+      "09:50": "DEV-T [205]",
+      "14:00": "AI [604]",
+      "14:55": "CN [604]",
+      "15:50": "AI [604]"
+    },
+    "Tuesday": {
+      "08:55": "Professional Elective (PE)",
+      "09:50": "CN [201]",
+      "10:45": "OOMD [201]",
+      "14:00": "OOMD LAB [Lab-3] (B1-SVA, B2-MJ, B3-SGG, B4-SGG)"
+    },
+    "Wednesday": {
+      "08:55": "CN [206]",
+      "09:50": "Professional Elective (PE)",
+      "10:45": "Seminar / Workshop / Proctor Meet",
+      "14:00": "BIS LAB [Lab-3] (B1-SWS, B2-MMP, B3-MRN, B4-SGG)"
+    },
+    "Thursday": {
+      "08:55": "OOMD [205]",
+      "09:50": "DEV [206]",
+      "10:45": "AI [205]",
+      "14:00": "CN LAB [Lab-3] (B1-YGM, B2-RM, B3-MAT, B4-MRN)"
+    },
+    "Friday": {
+      "14:00": "AI LAB [Lab-3] (B1-SWS, B2-MJ, B3-KTJ, B4-KTJ)"
+    },
+    "Saturday": {
+      "08:00": "DEV [201]"
+    },
+    "Sunday": {
+      "08:00": "Holiday"
+    }
+  },
+  "5B3": {
+    "Monday": {
+      "09:50": "CN [206]",
+      "10:45": "Professional Elective (PE)",
+      "11:15": "Seminar / Workshop / Proctor Meet",
+      "12:10": "Professional Elective (PE)",
+      "13:05": "AI [205]",
+      "14:00": "OOMD LAB [Lab1-2] (B1-MJ, B2-SVA, B3-BSS, B4-YGM)"
+    },
+    "Tuesday": {
+      "09:50": "OOMD [206]",
+      "10:45": "Professional Elective (PE)",
+      "11:15": "CC LAB [Lab-3] (B1-VS, B2-PCV)",
+      "14:00": "AI [205]",
+      "14:55": "OOMD [205]",
+      "15:50": "DEV-T [201]"
+    },
+    "Wednesday": {
+      "09:50": "CN LAB [Lab-3] (B1-RM, B2-AHM, B3-MRN, B4-MRP)",
+      "11:15": "CN [206]",
+      "12:10": "DEV [220]",
+      "14:00": "AI LAB [Lab-502] (B1-PCH, B2-KTJ, B3-STL, B4-STL)"
+    },
+    "Thursday": {
+      "08:00": "BIS LAB [Lab-501] (B1-PCH, B2-AMS, B3-RM, B4-VS)",
+      "14:00": "CN [201]"
+    },
+    "Friday": {
+      "08:00": "Holiday / No Class Scheduled"
+    },
+    "Saturday": {
+      "11:15": "DEV [206]",
+      "12:10": "AI [206]"
+    },
+    "Sunday": {
+      "08:00": "Holiday"
+    }
+  },
+  "5B4": {
+    "Monday": {
+      "10:45": "AI [5-ISE-504]",
+      "11:15": "Professional Elective (PE)",
+      "12:10": "OOMD [204]",
+      "13:05": "DEV [5-ISE-504]",
+      "14:00": "AI LAB [Lab-502] (B1-PCH, B2-MRN, B3-KTJ, B4-KTJ)"
+    },
+    "Tuesday": {
+      "10:45": "Professional Elective (PE)",
+      "11:15": "AI [206]",
+      "12:10": "CN [206]",
+      "13:05": "DEV-T [204]",
+      "14:00": "CN LAB [Lab1-2] (B1-RM, B2-STL, B3-STL, B4-BRH)"
+    },
+    "Wednesday": {
+      "14:00": "OOMD LAB [Lab-3] (B1-MJ, B2-MAT, B3-RM, B4-YGM)"
+    },
+    "Thursday": {
+      "10:45": "Professional Elective (PE)",
+      "11:15": "BIS LAB [Lab-3] (B1-AMS, B2-MJ, B3-STL, B4-STL)",
+      "14:00": "OOMD [201]"
+    },
+    "Friday": {
+      "11:15": "CN [403]",
+      "12:10": "CC LAB [CSDS-Lab2] (B1-KTJ, B2-MAT)",
+      "14:00": "AI [205]"
+    },
+    "Saturday": {
+      "11:15": "CN [404]",
+      "12:10": "Seminar / Workshop / Proctor Meet",
+      "13:05": "DEV [404]"
+    },
+    "Sunday": {
+      "08:00": "Holiday"
+    }
+  },
+  "5B5": {
+    "Monday": {
+      "10:20": "CN [5-ISE-504]",
+      "11:15": "Seminar / Workshop / Proctor Meet",
+      "12:10": "AI [205]",
+      "13:05": "Professional Elective (PE)",
+      "14:00": "BIS LAB [Lab-501] (B1-ASG, B2-SGG, B3-FAS, B4-SVH)"
+    },
+    "Tuesday": {
+      "08:00": "OOMD [204]",
+      "11:15": "AI [204]",
+      "12:10": "Professional Elective (PE)",
+      "13:05": "DEV [204]",
+      "14:00": "CN LAB [Lab-501] (B1-YGM, B2-SVH, B3-MAT, B4-MAT)"
+    },
+    "Wednesday": {
+      "08:00": "OOMD LAB [Lab-502] (B1-MAT, B2-SWS, B3-SVH, B4-ARP)",
+      "12:10": "OOMD [201]",
+      "13:05": "CN [303]",
+      "14:00": "CC LAB [LAB 1] (B1-SGG, B2-MRN)"
+    },
+    "Thursday": {
+      "11:15": "Professional Elective (PE)",
+      "12:10": "DEV-T [204]",
+      "13:05": "DEV [201]",
+      "14:00": "AI LAB [Lab-501] (B1-KOS, B2-SWS, B3-FAS, B4-FAS)"
+    },
+    "Friday": {
+      "11:15": "AI [204]",
+      "14:00": "CN [206]"
+    },
+    "Saturday": {
+      "08:00": "Holiday / No Class Scheduled"
+    },
+    "Sunday": {
+      "08:00": "Holiday"
+    }
+  }
+}
