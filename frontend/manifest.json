@@ -1,16 +1,10 @@
 {
-  "short_name": "BMSCE Timetable",
+  "short_name": "Timetable",
   "name": "BMSCE Live Timetable Tracker",
-  "icons": [
-    {
-      "src": "https://cdn-icons-png.flaticon.com/512/2682/2682065.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
-  "start_url": "index.html",
-  "background_color": "#0d253f",
-  "theme_color": "#0d253f",
+  "icons": [],
+  "start_url": "/",
+  "background_color": "#0f172a",
+  "theme_color": "#1a202c",
   "display": "standalone",
   "orientation": "portrait"
 }

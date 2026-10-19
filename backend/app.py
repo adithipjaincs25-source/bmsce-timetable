@@ -2,30 +2,33 @@ from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 import json
 import datetime
-import re
 
 app = Flask(__name__, static_folder='../frontend', static_url_path='')
 CORS(app)
 
-# Define IST Timezone Offset (+5:30)
+# Explicitly enforce Indian Standard Time (+05:30)
 IST = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
 
-# Load JSON Data & Aliases
-with open('data.json', 'r') as file:
-    timetable_data = json.load(file)
+# Load Timetable Data
+try:
+    with open('data.json', 'r') as file:
+        timetable_data = json.load(file)
+except Exception as e:
+    timetable_data = {}
 
+# Strict Section and Alternate Alias Mapping
 SECTION_ALIASES = {
     # 3rd Semester
     "3D": "3B1", "3B1": "3B1", "D": "3B1",
     "3G": "3B2", "3B2": "3B2", "G": "3B2",
-    "3N": "3B3", "3B3": "3B3",
+    "3N": "3B3", "3B3": "3B3", "N": "3B3",
     "3Q": "3B4", "3B4": "3B4", "Q": "3B4",
     "3V": "3B5", "3B5": "3B5", "V": "3B5",
 
     # 5th Semester
     "5D": "5B1", "5B1": "5B1",
     "5G": "5B2", "5B2": "5B2",
-    "5N": "5B3", "5B3": "5B3", "N": "5B3",
+    "5N": "5B3", "5B3": "5B3",
     "5O": "5B4", "5B4": "5B4", "O": "5B4",
     "5V": "5B5", "5B5": "5B5"
 }
@@ -74,9 +77,8 @@ def serve_ui():
 def get_current_class(section_name):
     section_key = resolve_section_key(section_name)
     if section_key not in timetable_data:
-        return jsonify({"success": False, "error": "Section not found"}), 404
+        return jsonify({"success": False, "error": f"Section '{section_name}' not found"}), 404
         
-    # Get current time explicitly in IST
     now = datetime.datetime.now(IST)
     day = now.strftime("%A")
     current_mins = now.hour * 60 + now.minute
@@ -95,7 +97,7 @@ def get_current_class(section_name):
 def get_section_schedule(section_name):
     section_key = resolve_section_key(section_name)
     if section_key not in timetable_data:
-        return jsonify({"success": False, "error": "Section not found"}), 404
+        return jsonify({"success": False, "error": f"Section '{section_name}' not found"}), 404
         
     requested_day = request.args.get('day')
     section_dict = timetable_data.get(section_key, {})
@@ -121,13 +123,12 @@ def get_all_sections_live():
     if not data or data.get("password") != "Admin123":
         return jsonify({"success": False, "error": "Incorrect password"}), 401
 
-    # Get current time explicitly in IST
     now = datetime.datetime.now(IST)
     day = now.strftime("%A")
     current_mins = now.hour * 60 + now.minute
 
     live_dashboard = {}
-    for sec_name in timetable_data.keys():
+    for sec_name in sorted(timetable_data.keys()):
         live_dashboard[sec_name] = get_active_class_for_section(sec_name, day, current_mins)
 
     return jsonify({

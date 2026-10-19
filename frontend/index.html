@@ -6,10 +6,10 @@
     <title>BMSCE Live Timetable Tracker</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a202c">
 </head>
 <body>
 
-    <!-- Header Navigation -->
     <header class="app-header">
         <div class="header-title">
             <h1>BMSCE CSE</h1>
@@ -26,7 +26,7 @@
 
     <main class="app-content">
 
-        <!-- SCREEN 0: Name Onboarding -->
+        <!-- SCREEN 0: Name Setup -->
         <section id="name-setup-screen" class="card-screen">
             <h2>Welcome!</h2>
             <p>Enter your name to customize your schedule tracker.</p>
@@ -39,7 +39,7 @@
             </form>
         </section>
 
-        <!-- SCREEN 1: Role Selection -->
+        <!-- SCREEN 1: Role Select -->
         <section id="role-select-screen" class="card-screen hidden">
             <h2 id="role-welcome-heading">Hello!</h2>
             <p>Select your operational mode below.</p>
@@ -49,7 +49,7 @@
             </div>
         </section>
 
-        <!-- SCREEN 2: Student Setup (With Official Document Section Codes) -->
+        <!-- SCREEN 2: Student Section Selection -->
         <section id="student-setup-screen" class="card-screen hidden">
             <h2>Select Your Section</h2>
             <form id="student-form">
@@ -84,7 +84,6 @@
                 <p>Section <span id="display-section-name">--</span></p>
             </div>
 
-            <!-- Day Selector Tabs -->
             <div class="day-tabs-container">
                 <button class="day-tab active" data-day="LIVE">Live Now</button>
                 <button class="day-tab" data-day="Monday">Mon</button>
@@ -95,7 +94,6 @@
                 <button class="day-tab" data-day="Saturday">Sat</button>
             </div>
 
-            <!-- Live Card View -->
             <div id="live-view-block">
                 <div class="status-badge">
                     <span id="student-day-time">Loading...</span>
@@ -104,15 +102,12 @@
                     <p class="label">CURRENT CLASS & LOCATION</p>
                     <h3 id="live-class-name">Fetching current class...</h3>
                 </div>
-                <button id="refresh-student-btn" class="btn btn-outline">Refresh Live Location</button>
+                <button id="refresh-student-btn" class="btn btn-outline">Refresh Live Status</button>
             </div>
 
-            <!-- Full Day Schedule List View -->
             <div id="day-schedule-block" class="hidden">
                 <h4 id="selected-day-title" class="schedule-title">Monday Timetable</h4>
-                <div id="day-schedule-list" class="schedule-list">
-                    <!-- Populated dynamically -->
-                </div>
+                <div id="day-schedule-list" class="schedule-list"></div>
             </div>
         </section>
 
@@ -120,9 +115,9 @@
         <div id="password-modal" class="modal hidden">
             <div class="modal-content">
                 <h3>Admin Authentication</h3>
-                <p>Enter administrative credentials for department overview.</p>
+                <p>Enter password for department overview.</p>
                 <input type="password" id="admin-password" placeholder="Enter Password">
-                <p id="password-error" class="error-text hidden">Incorrect password. Try again.</p>
+                <p id="password-error" class="error-text hidden">Incorrect password.</p>
                 <div class="modal-actions">
                     <button id="cancel-password-btn" class="btn btn-secondary">Cancel</button>
                     <button id="submit-password-btn" class="btn btn-primary">Login</button>
@@ -148,9 +143,7 @@
                             <th>Current Class / Room</th>
                         </tr>
                     </thead>
-                    <tbody id="teacher-table-body">
-                        <!-- Populated by JS -->
-                    </tbody>
+                    <tbody id="teacher-table-body"></tbody>
                 </table>
             </div>
             <button id="refresh-teacher-btn" class="btn btn-outline">Refresh All Sections</button>

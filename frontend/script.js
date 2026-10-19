@@ -1,296 +1,237 @@
-// Register Service Worker for PWA
+// Register Service Worker for Offline Capabilities
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js')
-        .then(() => console.log('Service Worker Registered'))
-        .catch((err) => console.log('SW Registration Failed:', err));
+    navigator.serviceWorker.register('sw.js').catch(err => console.log('SW registration failed:', err));
 }
 
-const API_BASE = '/api';
+let currentUser = {
+    name: localStorage.getItem('user_name') || '',
+    role: localStorage.getItem('user_role') || '',
+    section: localStorage.getItem('user_section') || ''
+};
 
-// DOM Elements
-const menuBtn = document.getElementById('menu-btn');
-const dropdownMenu = document.getElementById('dropdown-menu');
-const btnChangeSection = document.getElementById('btn-change-section');
-const btnChangeName = document.getElementById('btn-change-name');
+const OFFICIAL_SECTION_NAMES = {
+    "3B1": "3B1 [3D]", "3B2": "3B2 [3G]", "3B3": "3B3 [3N]", "3B4": "3B4 [3Q]", "3B5": "3B5 [3V]",
+    "5B1": "5B1 [5D]", "5B2": "5B2 [5G]", "5B3": "5B3 [5N]", "5B4": "5B4 [5O]", "5B5": "5B5 [5V]"
+};
 
-const nameSetupScreen = document.getElementById('name-setup-screen');
-const nameForm = document.getElementById('name-form');
-const userNameInput = document.getElementById('user-name-input');
-
-const roleSelectScreen = document.getElementById('role-select-screen');
-const roleWelcomeHeading = document.getElementById('role-welcome-heading');
-
-const studentSetupScreen = document.getElementById('student-setup-screen');
-const studentDashboard = document.getElementById('student-dashboard');
-const teacherDashboard = document.getElementById('teacher-dashboard');
-const passwordModal = document.getElementById('password-modal');
-
-const selectStudentBtn = document.getElementById('select-student-btn');
-const selectTeacherBtn = document.getElementById('select-teacher-btn');
-const studentForm = document.getElementById('student-form');
-const sectionSelect = document.getElementById('section-select');
-
-const studentGreeting = document.getElementById('student-greeting');
-const teacherGreeting = document.getElementById('teacher-greeting');
-const displaySectionName = document.getElementById('display-section-name');
-const liveClassName = document.getElementById('live-class-name');
-const studentDayTime = document.getElementById('student-day-time');
-const refreshStudentBtn = document.getElementById('refresh-student-btn');
-
-const dayTabs = document.querySelectorAll('.day-tab');
-const liveViewBlock = document.getElementById('live-view-block');
-const dayScheduleBlock = document.getElementById('day-schedule-block');
-const selectedDayTitle = document.getElementById('selected-day-title');
-const dayScheduleList = document.getElementById('day-schedule-list');
-
-const adminPasswordInput = document.getElementById('admin-password');
-const submitPasswordBtn = document.getElementById('submit-password-btn');
-const cancelPasswordBtn = document.getElementById('cancel-password-btn');
-const passwordError = document.getElementById('password-error');
-
-const teacherTableBody = document.getElementById('teacher-table-body');
-const teacherDayTime = document.getElementById('teacher-day-time');
-const refreshTeacherBtn = document.getElementById('refresh-teacher-btn');
-
-// App Initialization
 document.addEventListener('DOMContentLoaded', () => {
-    initApp();
+    initAppFlow();
+    setupEventListeners();
 });
 
-function initApp() {
-    const savedName = localStorage.getItem('userName');
-    const savedRole = localStorage.getItem('userRole');
-    const savedSection = localStorage.getItem('studentSection');
-
+function initAppFlow() {
     hideAllScreens();
-
-    if (!savedName) {
-        nameSetupScreen.classList.remove('hidden');
-    } else if (!savedRole) {
-        roleWelcomeHeading.textContent = `Hello, ${savedName}!`;
-        roleSelectScreen.classList.remove('hidden');
-    } else if (savedRole === 'student' && savedSection) {
-        loadStudentDashboard(savedName, savedSection);
-    } else if (savedRole === 'teacher') {
-        loadTeacherDashboard(savedName);
-    } else {
-        roleWelcomeHeading.textContent = `Hello, ${savedName}!`;
-        roleSelectScreen.classList.remove('hidden');
+    if (!currentUser.name) {
+        showScreen('name-setup-screen');
+    } else if (!currentUser.role) {
+        document.getElementById('role-welcome-heading').innerText = `Hello, ${currentUser.name}!`;
+        showScreen('role-select-screen');
+    } else if (currentUser.role === 'student') {
+        if (!currentUser.section) {
+            showScreen('student-setup-screen');
+        } else {
+            loadStudentDashboard();
+        }
+    } else if (currentUser.role === 'teacher') {
+        loadTeacherDashboard();
     }
 }
 
 function hideAllScreens() {
-    nameSetupScreen.classList.add('hidden');
-    roleSelectScreen.classList.add('hidden');
-    studentSetupScreen.classList.add('hidden');
-    studentDashboard.classList.add('hidden');
-    teacherDashboard.classList.add('hidden');
-    passwordModal.classList.add('hidden');
-    dropdownMenu.classList.add('hidden');
+    const screens = ['name-setup-screen', 'role-select-screen', 'student-setup-screen', 'student-dashboard', 'teacher-dashboard', 'password-modal'];
+    screens.forEach(id => document.getElementById(id).classList.add('hidden'));
 }
 
-// Menu & Header Events
-menuBtn.addEventListener('click', () => dropdownMenu.classList.toggle('hidden'));
+function showScreen(id) {
+    document.getElementById(id).classList.remove('hidden');
+}
 
-btnChangeSection.addEventListener('click', () => {
-    localStorage.removeItem('userRole');
-    localStorage.removeItem('studentSection');
-    initApp();
-});
-
-btnChangeName.addEventListener('click', () => {
-    localStorage.clear();
-    initApp();
-});
-
-// Name Form
-nameForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const enteredName = userNameInput.value.trim();
-    if (enteredName) {
-        localStorage.setItem('userName', enteredName);
-        initApp();
-    }
-});
-
-selectStudentBtn.addEventListener('click', () => {
-    hideAllScreens();
-    studentSetupScreen.classList.remove('hidden');
-});
-
-selectTeacherBtn.addEventListener('click', () => {
-    passwordError.classList.add('hidden');
-    adminPasswordInput.value = '';
-    passwordModal.classList.remove('hidden');
-});
-
-cancelPasswordBtn.addEventListener('click', () => passwordModal.classList.add('hidden'));
-
-// Student Actions
-studentForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const chosenSection = sectionSelect.value;
-    const currentName = localStorage.getItem('userName');
-    
-    if (chosenSection) {
-        localStorage.setItem('userRole', 'student');
-        localStorage.setItem('studentSection', chosenSection);
-        loadStudentDashboard(currentName, chosenSection);
-    }
-});
-
-refreshStudentBtn.addEventListener('click', () => {
-    const savedName = localStorage.getItem('userName');
-    const savedSection = localStorage.getItem('studentSection');
-    if (savedSection) loadStudentDashboard(savedName, savedSection);
-});
-
-// Day Tab Switcher Logic
-dayTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        dayTabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-
-        const selectedDay = tab.dataset.day;
-        const savedSection = localStorage.getItem('studentSection');
-
-        if (selectedDay === 'LIVE') {
-            dayScheduleBlock.classList.add('hidden');
-            liveViewBlock.classList.remove('hidden');
-            loadLiveStudentLocation(savedSection);
-        } else {
-            liveViewBlock.classList.add('hidden');
-            dayScheduleBlock.classList.remove('hidden');
-            fetchDaySchedule(savedSection, selectedDay);
-        }
+function setupEventListeners() {
+    // Menu
+    document.getElementById('menu-btn').addEventListener('click', () => {
+        document.getElementById('dropdown-menu').classList.toggle('hidden');
     });
-});
 
-async function loadStudentDashboard(name, section) {
-    hideAllScreens();
-    studentDashboard.classList.remove('hidden');
-    studentGreeting.textContent = `Hello, ${name}!`;
-    displaySectionName.textContent = section;
+    document.getElementById('btn-change-section').addEventListener('click', () => {
+        document.getElementById('dropdown-menu').classList.add('hidden');
+        currentUser.role = '';
+        currentUser.section = '';
+        localStorage.removeItem('user_role');
+        localStorage.removeItem('user_section');
+        initAppFlow();
+    });
 
-    // Default tab to LIVE
-    dayTabs.forEach(t => t.classList.remove('active'));
-    dayTabs[0].classList.add('active');
-    dayScheduleBlock.classList.add('hidden');
-    liveViewBlock.classList.remove('hidden');
+    document.getElementById('btn-change-name').addEventListener('click', () => {
+        document.getElementById('dropdown-menu').classList.add('hidden');
+        localStorage.clear();
+        currentUser = { name: '', role: '', section: '' };
+        initAppFlow();
+    });
 
-    loadLiveStudentLocation(section);
-}
+    // Form 0: Name
+    document.getElementById('name-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        currentUser.name = document.getElementById('user-name-input').value.trim();
+        localStorage.setItem('user_name', currentUser.name);
+        initAppFlow();
+    });
 
-async function loadLiveStudentLocation(section) {
-    liveClassName.textContent = "Loading current location...";
-    try {
-        const response = await fetch(`${API_BASE}/section/${section}/current`);
-        const data = await response.json();
+    // Role Select
+    document.getElementById('select-student-btn').addEventListener('click', () => {
+        currentUser.role = 'student';
+        localStorage.setItem('user_role', 'student');
+        initAppFlow();
+    });
 
-        if (data.success) {
-            studentDayTime.textContent = `${data.day} | ${data.time}`;
-            liveClassName.textContent = data.current_class;
-        } else {
-            liveClassName.textContent = "No schedule found for this section.";
-        }
-    } catch (err) {
-        liveClassName.textContent = "Server offline. Ensure app.py is running.";
-    }
-}
+    document.getElementById('select-teacher-btn').addEventListener('click', () => {
+        showScreen('password-modal');
+    });
 
-async function fetchDaySchedule(section, day) {
-    selectedDayTitle.textContent = `${day} Timetable`;
-    dayScheduleList.innerHTML = '<p style="font-size: 0.85rem; color: #64748b;">Loading schedule...</p>';
+    // Modal Password
+    document.getElementById('cancel-password-btn').addEventListener('click', () => {
+        document.getElementById('password-modal').classList.add('hidden');
+    });
 
-    try {
-        const response = await fetch(`${API_BASE}/section/${section}/schedule?day=${day}`);
-        const data = await response.json();
+    document.getElementById('submit-password-btn').addEventListener('click', verifyAdminPassword);
 
-        if (data.success && data.schedule && Object.keys(data.schedule).length > 0) {
-            dayScheduleList.innerHTML = '';
-            for (const [timeSlot, subject] of Object.entries(data.schedule)) {
-                const item = document.createElement('div');
-                item.className = 'schedule-item';
-                item.innerHTML = `
-                    <span class="time-slot">${timeSlot}</span>
-                    <span class="subject-name">${subject}</span>
-                `;
-                dayScheduleList.appendChild(item);
+    // Form 2: Student Section
+    document.getElementById('student-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        currentUser.section = document.getElementById('section-select').value;
+        localStorage.setItem('user_section', currentUser.section);
+        initAppFlow();
+    });
+
+    // Tabs
+    document.querySelectorAll('.day-tab').forEach(tab => {
+        tab.addEventListener('click', (e) => {
+            document.querySelectorAll('.day-tab').forEach(t => t.classList.remove('active'));
+            e.target.classList.add('active');
+            const day = e.target.getAttribute('data-day');
+            if (day === 'LIVE') {
+                document.getElementById('live-view-block').classList.remove('hidden');
+                document.getElementById('day-schedule-block').classList.add('hidden');
+                fetchLiveStatus();
+            } else {
+                document.getElementById('live-view-block').classList.add('hidden');
+                document.getElementById('day-schedule-block').classList.remove('hidden');
+                fetchDaySchedule(day);
             }
-        } else {
-            dayScheduleList.innerHTML = '<p style="font-size: 0.85rem; color: #64748b;">No classes scheduled for this day.</p>';
-        }
-    } catch (err) {
-        dayScheduleList.innerHTML = '<p style="font-size: 0.85rem; color: #ef4444;">Error fetching day schedule.</p>';
-    }
-}
-
-// Teacher Actions
-submitPasswordBtn.addEventListener('click', handleTeacherLogin);
-
-async function handleTeacherLogin() {
-    const password = adminPasswordInput.value;
-    const name = localStorage.getItem('userName');
-    try {
-        const response = await fetch(`${API_BASE}/all_sections/current`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ password: password })
         });
+    });
 
-        const data = await response.json();
+    document.getElementById('refresh-student-btn').addEventListener('click', fetchLiveStatus);
+    document.getElementById('refresh-teacher-btn').addEventListener('click', loadTeacherDashboard);
+}
 
-        if (data.success) {
-            localStorage.setItem('userRole', 'teacher');
-            passwordModal.classList.add('hidden');
-            renderTeacherTable(name, data);
-        } else {
-            passwordError.classList.remove('hidden');
-        }
-    } catch (err) {
-        alert("Server connection failed. Make sure backend is running.");
+function verifyAdminPassword() {
+    const pwd = document.getElementById('admin-password').value;
+    if (pwd === "Admin123") {
+        document.getElementById('password-modal').classList.add('hidden');
+        currentUser.role = 'teacher';
+        localStorage.setItem('user_role', 'teacher');
+        initAppFlow();
+    } else {
+        document.getElementById('password-error').classList.remove('hidden');
     }
 }
 
-refreshTeacherBtn.addEventListener('click', () => {
-    const savedName = localStorage.getItem('userName');
-    loadTeacherDashboard(savedName);
-});
+function loadStudentDashboard() {
+    showScreen('student-dashboard');
+    document.getElementById('student-greeting').innerText = `Hello, ${currentUser.name}!`;
+    document.getElementById('display-section-name').innerText = OFFICIAL_SECTION_NAMES[currentUser.section] || currentUser.section;
+    fetchLiveStatus();
+    cacheFullScheduleOffline();
+}
 
-async function loadTeacherDashboard(name) {
-    hideAllScreens();
-    teacherDashboard.classList.remove('hidden');
-    teacherGreeting.textContent = `Hello, ${name}!`;
+async function fetchLiveStatus() {
+    try {
+        const res = await fetch(`/api/section/${currentUser.section}/current`);
+        const data = await res.json();
+        if (data.success) {
+            document.getElementById('student-day-time').innerText = `${data.day}, ${data.time}`;
+            document.getElementById('live-class-name').innerText = data.current_class;
+        }
+    } catch (err) {
+        document.getElementById('student-day-time').innerText = "Offline Mode";
+        document.getElementById('live-class-name').innerText = "Unable to fetch live status offline. Select a day tab to view cached schedule.";
+    }
+}
+
+async function cacheFullScheduleOffline() {
+    try {
+        const res = await fetch(`/api/section/${currentUser.section}/schedule`);
+        const data = await res.json();
+        if (data.success) {
+            localStorage.setItem(`cached_schedule_${currentUser.section}`, JSON.stringify(data.full_timetable));
+        }
+    } catch (err) {
+        console.log("Using cached offline timetable.");
+    }
+}
+
+async function fetchDaySchedule(day) {
+    document.getElementById('selected-day-title').innerText = `${day} Timetable`;
+    const list = document.getElementById('day-schedule-list');
+    list.innerHTML = "<p>Loading schedule...</p>";
 
     try {
-        const response = await fetch(`${API_BASE}/all_sections/current`, {
+        const res = await fetch(`/api/section/${currentUser.section}/schedule?day=${day}`);
+        const data = await res.json();
+        if (data.success) {
+            renderScheduleList(data.schedule);
+            return;
+        }
+    } catch (err) {
+        // Offline Fallback from LocalStorage
+        const cached = localStorage.getItem(`cached_schedule_${currentUser.section}`);
+        if (cached) {
+            const timetable = JSON.parse(cached);
+            renderScheduleList(timetable[day] || {});
+            return;
+        }
+    }
+    list.innerHTML = "<p>No offline data cached for this section yet.</p>";
+}
+
+function renderScheduleList(scheduleObj) {
+    const list = document.getElementById('day-schedule-list');
+    list.innerHTML = '';
+    if (!scheduleObj || Object.keys(scheduleObj).length === 0) {
+        list.innerHTML = "<p>No classes scheduled for this day.</p>";
+        return;
+    }
+    for (const [time, subject] of Object.entries(scheduleObj)) {
+        const item = document.createElement('div');
+        item.className = 'schedule-item';
+        item.innerHTML = `<span class="schedule-time">${time}</span><span class="schedule-subject">${subject}</span>`;
+        list.appendChild(item);
+    }
+}
+
+async function loadTeacherDashboard() {
+    showScreen('teacher-dashboard');
+    document.getElementById('teacher-greeting').innerText = `Hello, ${currentUser.name}!`;
+    const tbody = document.getElementById('teacher-table-body');
+    tbody.innerHTML = "<tr><td colspan='2'>Fetching live status...</td></tr>";
+
+    try {
+        const res = await fetch('/api/all_sections/current', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ password: "Admin123" })
         });
-
-        const data = await response.json();
+        const data = await res.json();
         if (data.success) {
-            renderTeacherTable(name, data);
+            document.getElementById('teacher-day-time').innerText = `${data.day}, ${data.time}`;
+            tbody.innerHTML = '';
+            for (const [sec, cls] of Object.entries(data.live_data)) {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `<td><strong>${OFFICIAL_SECTION_NAMES[sec] || sec}</strong></td><td>${cls}</td>`;
+                tbody.appendChild(tr);
+            }
         }
     } catch (err) {
-        console.error(err);
-    }
-}
-
-function renderTeacherTable(name, data) {
-    hideAllScreens();
-    teacherDashboard.classList.remove('hidden');
-    teacherGreeting.textContent = `Hello, ${name}!`;
-    teacherDayTime.textContent = `${data.day} | ${data.time}`;
-    teacherTableBody.innerHTML = '';
-
-    for (const [section, classInfo] of Object.entries(data.live_data)) {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${section}</td>
-            <td>${classInfo}</td>
-        `;
-        teacherTableBody.appendChild(row);
+        tbody.innerHTML = "<tr><td colspan='2'>Offline Mode: Unable to fetch live department status.</td></tr>";
     }
 }
