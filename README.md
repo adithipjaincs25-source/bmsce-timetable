@@ -49,4 +49,4 @@ Let admins edit the timetable from the browser
 
 Author
 
-Adithi P Jain Computer Science Engineering, BMS College of Engineering LinkedIn | GitHub
+Adithi P Jain Computer Science Engineering, BMS College of Engineering .
