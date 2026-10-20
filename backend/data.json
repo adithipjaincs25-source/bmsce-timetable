@@ -1,397 +1,1921 @@
 {
-  "3B1": {
-    "Monday": {
-      "08:00": "DMS [201]",
-      "08:55": "DLCO [606]",
-      "10:20": "DBMS [606]",
-      "11:15": "DS [606]",
-      "12:10": "DIP-MATH(A)",
-      "14:00": "FSD LAB [AIDS LAB] (B1-SVH, B2-MJ, B3-FAS, B4-MRP)"
+  "institution": "B.M.S. College of Engineering, Bangalore - 560019",
+  "department": "Computer Science and Engineering",
+  "term": "September 2026 - December 2026",
+  "effective_from": "2026-10-15",
+  "time_format": "24-hour (HH:MM)",
+  "classes": {
+    "3B1": {
+      "semester": 3,
+      "section_alias": "3D",
+      "timetable": {
+        "MON": [
+          {
+            "start": "08:55",
+            "end": "09:50",
+            "duration_minutes": 55,
+            "subject": "DMS",
+            "subject_full": "Discrete Mathematics and Statistics",
+            "room": "201"
+          },
+          {
+            "start": "10:20",
+            "end": "11:15",
+            "duration_minutes": 55,
+            "subject": "DLCO",
+            "subject_full": "Digital Logic and Computer Organization",
+            "room": "606"
+          },
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "DBMS",
+            "subject_full": "Database Management Systems",
+            "room": "606"
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "DS",
+            "subject_full": "Data Structures",
+            "room": "606"
+          },
+          {
+            "start": "15:50",
+            "end": "16:45",
+            "duration_minutes": 55,
+            "subject": "DIP-MATH(A)",
+            "subject_full": "DIP-MATH(A)",
+            "room": null
+          }
+        ],
+        "TUE": [
+          {
+            "start": "08:55",
+            "end": "09:50",
+            "duration_minutes": 55,
+            "subject": "DMS",
+            "subject_full": "Discrete Mathematics and Statistics",
+            "room": "204"
+          },
+          {
+            "start": "10:20",
+            "end": "12:10",
+            "duration_minutes": 110,
+            "subject": "FSD LAB",
+            "subject_full": "Full Stack Development Lab",
+            "room": "AIDS LAB"
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "DS",
+            "subject_full": "Data Structures",
+            "room": "5-ISE-504"
+          },
+          {
+            "start": "15:50",
+            "end": "16:45",
+            "duration_minutes": 55,
+            "subject": "DIP-MATH(A)",
+            "subject_full": "DIP-MATH(A)",
+            "room": null
+          }
+        ],
+        "WED": [
+          {
+            "start": "08:00",
+            "end": "09:50",
+            "duration_minutes": 110,
+            "subject": "DS LAB",
+            "subject_full": "Data Structures Lab",
+            "room": "LAB-501"
+          },
+          {
+            "start": "10:20",
+            "end": "11:15",
+            "duration_minutes": 55,
+            "subject": "DS",
+            "subject_full": "Data Structures",
+            "room": "603 A"
+          },
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "DBMS",
+            "subject_full": "Database Management Systems",
+            "room": "603 A"
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "OOPS",
+            "subject_full": "Object Oriented Programming",
+            "room": "603 A"
+          },
+          {
+            "start": "14:00",
+            "end": "15:50",
+            "duration_minutes": 110,
+            "subject": "DMS_T",
+            "subject_full": "DMS Tutorial",
+            "room": "204"
+          },
+          {
+            "start": "15:50",
+            "end": "17:40",
+            "duration_minutes": 110,
+            "subject": "DIP-MATH(A)",
+            "subject_full": "DIP-MATH(A)",
+            "room": null
+          }
+        ],
+        "THU": [
+          {
+            "start": "08:55",
+            "end": "09:50",
+            "duration_minutes": 55,
+            "subject": "DLCO",
+            "subject_full": "Digital Logic and Computer Organization",
+            "room": "204"
+          },
+          {
+            "start": "10:20",
+            "end": "11:15",
+            "duration_minutes": 55,
+            "subject": "OOPS",
+            "subject_full": "Object Oriented Programming",
+            "room": "204"
+          },
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "Seminar/Workshop/Proctor Meet",
+            "subject_full": "Seminar/Workshop/Proctor Meet",
+            "room": null
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "DMS",
+            "subject_full": "Discrete Mathematics and Statistics",
+            "room": "204"
+          }
+        ],
+        "FRI": [
+          {
+            "start": "08:55",
+            "end": "09:50",
+            "duration_minutes": 55,
+            "subject": "OOPS",
+            "subject_full": "Object Oriented Programming",
+            "room": "206"
+          },
+          {
+            "start": "10:20",
+            "end": "11:15",
+            "duration_minutes": 55,
+            "subject": "DLCO",
+            "subject_full": "Digital Logic and Computer Organization",
+            "room": "206"
+          },
+          {
+            "start": "11:15",
+            "end": "13:05",
+            "duration_minutes": 110,
+            "subject": "DBMS LAB",
+            "subject_full": "Database Management Systems Lab",
+            "room": "LAB-502"
+          }
+        ],
+        "SAT": [
+          {
+            "start": "08:00",
+            "end": "09:50",
+            "duration_minutes": 110,
+            "subject": "OOPS LAB",
+            "subject_full": "Object Oriented Programming Lab",
+            "room": "LAB-501"
+          },
+          {
+            "start": "10:20",
+            "end": "11:15",
+            "duration_minutes": 55,
+            "subject": "DBMS",
+            "subject_full": "Database Management Systems",
+            "room": "205"
+          }
+        ]
+      }
     },
-    "Tuesday": {
-      "08:00": "DMS [204]",
-      "08:55": "DS [5-ISE-504]",
-      "10:20": "DIP-MATH(A)",
-      "11:15": "DS LAB [LAB-501] (B1-BSS, B2-PCV, B3-VS, B4-AMS)",
-      "14:00": "DS [603 A]",
-      "14:55": "DBMS [603 A]",
-      "15:50": "OOPS [603 A]"
+    "3B2": {
+      "semester": 3,
+      "section_alias": "3G",
+      "timetable": {
+        "MON": [
+          {
+            "start": "08:55",
+            "end": "09:50",
+            "duration_minutes": 55,
+            "subject": "DBMS",
+            "subject_full": "Database Management Systems",
+            "room": "ISE 501"
+          },
+          {
+            "start": "10:20",
+            "end": "11:15",
+            "duration_minutes": 55,
+            "subject": "DS",
+            "subject_full": "Data Structures",
+            "room": "204"
+          },
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "DLCO",
+            "subject_full": "Digital Logic and Computer Organization",
+            "room": "204"
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "OOPS",
+            "subject_full": "Object Oriented Programming",
+            "room": "204"
+          },
+          {
+            "start": "15:50",
+            "end": "16:45",
+            "duration_minutes": 55,
+            "subject": "DIP-MATH(A)",
+            "subject_full": "DIP-MATH(A)",
+            "room": null
+          }
+        ],
+        "TUE": [
+          {
+            "start": "08:55",
+            "end": "09:50",
+            "duration_minutes": 55,
+            "subject": "DMS",
+            "subject_full": "Discrete Mathematics and Statistics",
+            "room": "ISE 501"
+          },
+          {
+            "start": "10:20",
+            "end": "11:15",
+            "duration_minutes": 55,
+            "subject": "DS",
+            "subject_full": "Data Structures",
+            "room": "7F-MBA-CR2"
+          },
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "DLCO",
+            "subject_full": "Digital Logic and Computer Organization",
+            "room": "7F-MBA-CR2"
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "OOPS",
+            "subject_full": "Object Oriented Programming",
+            "room": "7F-MBA-CR2"
+          },
+          {
+            "start": "15:50",
+            "end": "16:45",
+            "duration_minutes": 55,
+            "subject": "DIP-MATH(A)",
+            "subject_full": "DIP-MATH(A)",
+            "room": null
+          }
+        ],
+        "WED": [
+          {
+            "start": "08:00",
+            "end": "09:50",
+            "duration_minutes": 110,
+            "subject": "FSD LAB",
+            "subject_full": "Full Stack Development Lab",
+            "room": "LAB-3"
+          },
+          {
+            "start": "10:20",
+            "end": "11:15",
+            "duration_minutes": 55,
+            "subject": "DLCO",
+            "subject_full": "Digital Logic and Computer Organization",
+            "room": "201"
+          },
+          {
+            "start": "11:15",
+            "end": "13:05",
+            "duration_minutes": 110,
+            "subject": "DMS_T",
+            "subject_full": "DMS Tutorial",
+            "room": "201"
+          },
+          {
+            "start": "14:00",
+            "end": "14:55",
+            "duration_minutes": 55,
+            "subject": "DBMS",
+            "subject_full": "Database Management Systems",
+            "room": "214"
+          },
+          {
+            "start": "15:50",
+            "end": "17:40",
+            "duration_minutes": 110,
+            "subject": "DIP-MATH(A)",
+            "subject_full": "DIP-MATH(A)",
+            "room": null
+          }
+        ],
+        "THU": [
+          {
+            "start": "08:00",
+            "end": "08:55",
+            "duration_minutes": 55,
+            "subject": "OOPS",
+            "subject_full": "Object Oriented Programming",
+            "room": "205"
+          },
+          {
+            "start": "08:55",
+            "end": "09:50",
+            "duration_minutes": 55,
+            "subject": "DBMS",
+            "subject_full": "Database Management Systems",
+            "room": "205"
+          },
+          {
+            "start": "10:20",
+            "end": "12:10",
+            "duration_minutes": 110,
+            "subject": "DBMS LAB",
+            "subject_full": "Database Management Systems Lab",
+            "room": "LAB-3"
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "DS",
+            "subject_full": "Data Structures",
+            "room": "213"
+          },
+          {
+            "start": "14:00",
+            "end": "14:55",
+            "duration_minutes": 55,
+            "subject": "DMS",
+            "subject_full": "Discrete Mathematics and Statistics",
+            "room": "403 APS"
+          }
+        ],
+        "FRI": [
+          {
+            "start": "08:00",
+            "end": "09:50",
+            "duration_minutes": 110,
+            "subject": "DS LAB",
+            "subject_full": "Data Structures Lab",
+            "room": "ICB LAB"
+          },
+          {
+            "start": "10:20",
+            "end": "12:10",
+            "duration_minutes": 110,
+            "subject": "OOPS LAB",
+            "subject_full": "Object Oriented Programming Lab",
+            "room": "LAB-501"
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "DMS",
+            "subject_full": "Discrete Mathematics and Statistics",
+            "room": "405 APS"
+          },
+          {
+            "start": "14:00",
+            "end": "14:55",
+            "duration_minutes": 55,
+            "subject": "Seminar/Workshop/Proctor Meet",
+            "subject_full": "Seminar/Workshop/Proctor Meet",
+            "room": "204"
+          }
+        ],
+        "SAT": []
+      }
     },
-    "Wednesday": {
-      "08:00": "DLCO [204]",
-      "08:55": "OOPS [204]",
-      "10:20": "OOPS [206]",
-      "11:15": "DLCO [206]",
-      "12:10": "Seminar / Workshop / Proctor Meet",
-      "14:00": "DBMS LAB [LAB-502] (B1-EN, B2-PGP, B3-MMP, B4-STL)"
+    "3B3": {
+      "semester": 3,
+      "section_alias": "3N",
+      "timetable": {
+        "MON": [
+          {
+            "start": "08:55",
+            "end": "09:50",
+            "duration_minutes": 55,
+            "subject": "DMS",
+            "subject_full": "Discrete Mathematics and Statistics",
+            "room": "205"
+          },
+          {
+            "start": "10:20",
+            "end": "11:15",
+            "duration_minutes": 55,
+            "subject": "DS",
+            "subject_full": "Data Structures",
+            "room": "206"
+          },
+          {
+            "start": "11:15",
+            "end": "13:05",
+            "duration_minutes": 110,
+            "subject": "FSD LAB",
+            "subject_full": "Full Stack Development Lab",
+            "room": "LAB-3"
+          }
+        ],
+        "TUE": [
+          {
+            "start": "08:55",
+            "end": "09:50",
+            "duration_minutes": 55,
+            "subject": "DLCO",
+            "subject_full": "Digital Logic and Computer Organization",
+            "room": "106"
+          },
+          {
+            "start": "10:20",
+            "end": "11:15",
+            "duration_minutes": 55,
+            "subject": "DBMS",
+            "subject_full": "Database Management Systems",
+            "room": "201"
+          },
+          {
+            "start": "11:15",
+            "end": "13:05",
+            "duration_minutes": 110,
+            "subject": "OOPS LAB",
+            "subject_full": "Object Oriented Programming Lab",
+            "room": "LAB-502"
+          }
+        ],
+        "WED": [
+          {
+            "start": "08:00",
+            "end": "08:55",
+            "duration_minutes": 55,
+            "subject": "DBMS",
+            "subject_full": "Database Management Systems",
+            "room": "204"
+          },
+          {
+            "start": "08:55",
+            "end": "09:50",
+            "duration_minutes": 55,
+            "subject": "DLCO",
+            "subject_full": "Digital Logic and Computer Organization",
+            "room": "204"
+          },
+          {
+            "start": "10:20",
+            "end": "11:15",
+            "duration_minutes": 55,
+            "subject": "OOPS",
+            "subject_full": "Object Oriented Programming",
+            "room": "205"
+          },
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "DMS",
+            "subject_full": "Discrete Mathematics and Statistics",
+            "room": "205"
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "DS",
+            "subject_full": "Data Structures",
+            "room": "205"
+          },
+          {
+            "start": "15:50",
+            "end": "16:45",
+            "duration_minutes": 55,
+            "subject": "DIP-MATH(B)",
+            "subject_full": "DIP-MATH(B)",
+            "room": null
+          }
+        ],
+        "THU": [
+          {
+            "start": "08:00",
+            "end": "09:50",
+            "duration_minutes": 110,
+            "subject": "DMS_T",
+            "subject_full": "DMS Tutorial",
+            "room": "5-ISE-504"
+          },
+          {
+            "start": "10:20",
+            "end": "11:15",
+            "duration_minutes": 55,
+            "subject": "OOPS",
+            "subject_full": "Object Oriented Programming",
+            "room": "206"
+          },
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "Seminar/Workshop/Proctor Meet",
+            "subject_full": "Seminar/Workshop/Proctor Meet",
+            "room": null
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "DS",
+            "subject_full": "Data Structures",
+            "room": "206"
+          },
+          {
+            "start": "15:50",
+            "end": "16:45",
+            "duration_minutes": 55,
+            "subject": "DIP-MATH(B)",
+            "subject_full": "DIP-MATH(B)",
+            "room": null
+          }
+        ],
+        "FRI": [
+          {
+            "start": "08:00",
+            "end": "08:55",
+            "duration_minutes": 55,
+            "subject": "DMS",
+            "subject_full": "Discrete Mathematics and Statistics",
+            "room": "201"
+          },
+          {
+            "start": "08:55",
+            "end": "09:50",
+            "duration_minutes": 55,
+            "subject": "DBMS",
+            "subject_full": "Database Management Systems",
+            "room": "201"
+          },
+          {
+            "start": "10:20",
+            "end": "12:10",
+            "duration_minutes": 110,
+            "subject": "DS LAB",
+            "subject_full": "Data Structures Lab",
+            "room": "CSDS LAB2"
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "DLCO",
+            "subject_full": "Digital Logic and Computer Organization",
+            "room": "5-ISE-504"
+          }
+        ],
+        "SAT": [
+          {
+            "start": "08:00",
+            "end": "09:50",
+            "duration_minutes": 110,
+            "subject": "DBMS LAB",
+            "subject_full": "Database Management Systems Lab",
+            "room": "LAB-3"
+          },
+          {
+            "start": "10:20",
+            "end": "11:15",
+            "duration_minutes": 55,
+            "subject": "OOPS",
+            "subject_full": "Object Oriented Programming",
+            "room": "206"
+          }
+        ]
+      }
     },
-    "Thursday": {
-      "08:00": "DMS [204]",
-      "08:55": "DMS-T [204]",
-      "10:20": "DIP-MATH(A)",
-      "11:15": "OOPS LAB [LAB-501] (B1-MMP, B2-SYT, B3-MRN, B4-YGM)"
+    "3B4": {
+      "semester": 3,
+      "section_alias": "3Q",
+      "timetable": {
+        "MON": [
+          {
+            "start": "08:00",
+            "end": "09:50",
+            "duration_minutes": 110,
+            "subject": "DMS_T",
+            "subject_full": "DMS Tutorial",
+            "room": "206"
+          },
+          {
+            "start": "10:20",
+            "end": "11:15",
+            "duration_minutes": 55,
+            "subject": "DBMS",
+            "subject_full": "Database Management Systems",
+            "room": "201"
+          },
+          {
+            "start": "11:15",
+            "end": "13:05",
+            "duration_minutes": 110,
+            "subject": "FSD LAB",
+            "subject_full": "Full Stack Development Lab",
+            "room": "LAB-501"
+          },
+          {
+            "start": "14:00",
+            "end": "14:55",
+            "duration_minutes": 55,
+            "subject": "DLCO",
+            "subject_full": "Digital Logic and Computer Organization",
+            "room": "5-ISE-504"
+          }
+        ],
+        "TUE": [
+          {
+            "start": "08:55",
+            "end": "09:50",
+            "duration_minutes": 55,
+            "subject": "DMS",
+            "subject_full": "Discrete Mathematics and Statistics",
+            "room": "205"
+          },
+          {
+            "start": "10:20",
+            "end": "11:15",
+            "duration_minutes": 55,
+            "subject": "DS",
+            "subject_full": "Data Structures",
+            "room": "205"
+          },
+          {
+            "start": "11:15",
+            "end": "13:05",
+            "duration_minutes": 110,
+            "subject": "DBMS LAB",
+            "subject_full": "Database Management Systems Lab",
+            "room": "LAB-501"
+          },
+          {
+            "start": "14:00",
+            "end": "14:55",
+            "duration_minutes": 55,
+            "subject": "DLCO",
+            "subject_full": "Digital Logic and Computer Organization",
+            "room": "408"
+          }
+        ],
+        "WED": [
+          {
+            "start": "08:55",
+            "end": "09:50",
+            "duration_minutes": 55,
+            "subject": "OOPS",
+            "subject_full": "Object Oriented Programming",
+            "room": "206"
+          },
+          {
+            "start": "10:20",
+            "end": "12:10",
+            "duration_minutes": 110,
+            "subject": "DS LAB",
+            "subject_full": "Data Structures Lab",
+            "room": "LAB 3"
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "DBMS",
+            "subject_full": "Database Management Systems",
+            "room": "5-ISE-504"
+          },
+          {
+            "start": "14:00",
+            "end": "15:50",
+            "duration_minutes": 110,
+            "subject": "OOPS LAB",
+            "subject_full": "Object Oriented Programming Lab",
+            "room": "LAB-502"
+          }
+        ],
+        "THU": [
+          {
+            "start": "08:00",
+            "end": "08:55",
+            "duration_minutes": 55,
+            "subject": "OOPS",
+            "subject_full": "Object Oriented Programming",
+            "room": "201"
+          },
+          {
+            "start": "08:55",
+            "end": "09:50",
+            "duration_minutes": 55,
+            "subject": "DBMS",
+            "subject_full": "Database Management Systems",
+            "room": "201"
+          },
+          {
+            "start": "10:20",
+            "end": "11:15",
+            "duration_minutes": 55,
+            "subject": "DS",
+            "subject_full": "Data Structures",
+            "room": "602"
+          },
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "DLCO",
+            "subject_full": "Digital Logic and Computer Organization",
+            "room": "602"
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "DMS",
+            "subject_full": "Discrete Mathematics and Statistics",
+            "room": "602"
+          },
+          {
+            "start": "15:50",
+            "end": "16:45",
+            "duration_minutes": 55,
+            "subject": "DIP-MATH(B)",
+            "subject_full": "DIP-MATH(B)",
+            "room": null
+          }
+        ],
+        "FRI": [
+          {
+            "start": "08:55",
+            "end": "09:50",
+            "duration_minutes": 55,
+            "subject": "DMS",
+            "subject_full": "Discrete Mathematics and Statistics",
+            "room": "ISE 501"
+          },
+          {
+            "start": "10:20",
+            "end": "11:15",
+            "duration_minutes": 55,
+            "subject": "OOPS",
+            "subject_full": "Object Oriented Programming",
+            "room": null
+          },
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "Seminar/Workshop/Proctor Meet",
+            "subject_full": "Seminar/Workshop/Proctor Meet",
+            "room": null
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "DS",
+            "subject_full": "Data Structures",
+            "room": "201"
+          },
+          {
+            "start": "15:50",
+            "end": "17:40",
+            "duration_minutes": 110,
+            "subject": "DIP-MATH(B)",
+            "subject_full": "DIP-MATH(B)",
+            "room": null
+          }
+        ],
+        "SAT": []
+      }
     },
-    "Friday": {
-      "08:00": "Holiday / No Class Scheduled",
-      "14:00": "DBMS [205]"
+    "3B5": {
+      "semester": 3,
+      "section_alias": "3V",
+      "timetable": {
+        "MON": [
+          {
+            "start": "08:55",
+            "end": "09:50",
+            "duration_minutes": 55,
+            "subject": "DLCO",
+            "subject_full": "Digital Logic and Computer Organization",
+            "room": "204"
+          },
+          {
+            "start": "10:20",
+            "end": "11:15",
+            "duration_minutes": 55,
+            "subject": "DS",
+            "subject_full": "Data Structures",
+            "room": "216"
+          },
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "DBMS",
+            "subject_full": "Database Management Systems",
+            "room": "216"
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "DMS",
+            "subject_full": "Discrete Mathematics and Statistics",
+            "room": "216"
+          }
+        ],
+        "TUE": [
+          {
+            "start": "08:55",
+            "end": "09:50",
+            "duration_minutes": 55,
+            "subject": "DLCO",
+            "subject_full": "Digital Logic and Computer Organization",
+            "room": "206"
+          },
+          {
+            "start": "10:20",
+            "end": "12:10",
+            "duration_minutes": 110,
+            "subject": "OOPS LAB",
+            "subject_full": "Object Oriented Programming Lab",
+            "room": "LAB-3"
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "Seminar/Workshop/Proctor Meet",
+            "subject_full": "Seminar/Workshop/Proctor Meet",
+            "room": null
+          }
+        ],
+        "WED": [
+          {
+            "start": "08:00",
+            "end": "08:55",
+            "duration_minutes": 55,
+            "subject": "OOPS",
+            "subject_full": "Object Oriented Programming",
+            "room": "201"
+          },
+          {
+            "start": "08:55",
+            "end": "09:50",
+            "duration_minutes": 55,
+            "subject": "DBMS",
+            "subject_full": "Database Management Systems",
+            "room": "201"
+          },
+          {
+            "start": "10:20",
+            "end": "12:10",
+            "duration_minutes": 110,
+            "subject": "DS LAB",
+            "subject_full": "Data Structures Lab",
+            "room": "LAB 501"
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "DLCO",
+            "subject_full": "Digital Logic and Computer Organization",
+            "room": "601"
+          },
+          {
+            "start": "14:00",
+            "end": "15:50",
+            "duration_minutes": 110,
+            "subject": "DMS_T",
+            "subject_full": "DMS Tutorial",
+            "room": "5-ISE-504"
+          },
+          {
+            "start": "15:50",
+            "end": "16:45",
+            "duration_minutes": 55,
+            "subject": "DIP-MATH(B)",
+            "subject_full": "DIP-MATH(B)",
+            "room": null
+          }
+        ],
+        "THU": [
+          {
+            "start": "08:00",
+            "end": "08:55",
+            "duration_minutes": 55,
+            "subject": "DS",
+            "subject_full": "Data Structures",
+            "room": "206"
+          },
+          {
+            "start": "08:55",
+            "end": "09:50",
+            "duration_minutes": 55,
+            "subject": "OOPS",
+            "subject_full": "Object Oriented Programming",
+            "room": "206"
+          },
+          {
+            "start": "10:20",
+            "end": "11:15",
+            "duration_minutes": 55,
+            "subject": "DMS",
+            "subject_full": "Discrete Mathematics and Statistics",
+            "room": "201"
+          },
+          {
+            "start": "11:15",
+            "end": "13:05",
+            "duration_minutes": 110,
+            "subject": "FSD LAB",
+            "subject_full": "Full Stack Development Lab",
+            "room": "LAB-504"
+          }
+        ],
+        "FRI": [
+          {
+            "start": "08:00",
+            "end": "08:55",
+            "duration_minutes": 55,
+            "subject": "OOPS",
+            "subject_full": "Object Oriented Programming",
+            "room": "205"
+          },
+          {
+            "start": "08:55",
+            "end": "09:50",
+            "duration_minutes": 55,
+            "subject": "DBMS",
+            "subject_full": "Database Management Systems",
+            "room": "205"
+          },
+          {
+            "start": "10:20",
+            "end": "12:10",
+            "duration_minutes": 110,
+            "subject": "DBMS LAB",
+            "subject_full": "Database Management Systems Lab",
+            "room": "Lab-3"
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "DS",
+            "subject_full": "Data Structures",
+            "room": "205"
+          },
+          {
+            "start": "14:00",
+            "end": "14:55",
+            "duration_minutes": 55,
+            "subject": "DMS",
+            "subject_full": "Discrete Mathematics and Statistics",
+            "room": "205"
+          },
+          {
+            "start": "15:50",
+            "end": "17:40",
+            "duration_minutes": 110,
+            "subject": "DIP-MATH(B)",
+            "subject_full": "DIP-MATH(B)",
+            "room": null
+          }
+        ],
+        "SAT": []
+      }
     },
-    "Saturday": {
-      "08:00": "Holiday / No Class Scheduled"
+    "5B1": {
+      "semester": 5,
+      "section_alias": "5D",
+      "timetable": {
+        "MON": [
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "DEV",
+            "subject_full": "Data Exploration and Visualization",
+            "room": "201"
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "OOMD",
+            "subject_full": "Object Oriented Modelling",
+            "room": "201"
+          },
+          {
+            "start": "13:05",
+            "end": "14:00",
+            "duration_minutes": 55,
+            "subject": "PE",
+            "subject_full": "Professional Elective",
+            "room": null
+          },
+          {
+            "start": "14:55",
+            "end": "16:45",
+            "duration_minutes": 110,
+            "subject": "BIS LAB",
+            "subject_full": "Bio Inspired Systems Lab",
+            "room": "Lab-3"
+          }
+        ],
+        "TUE": [
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "PE",
+            "subject_full": "Professional Elective",
+            "room": null
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "CN",
+            "subject_full": "Computer Networks",
+            "room": "205"
+          },
+          {
+            "start": "13:05",
+            "end": "14:00",
+            "duration_minutes": 55,
+            "subject": "AI",
+            "subject_full": "Artificial Intelligence",
+            "room": "205"
+          },
+          {
+            "start": "14:55",
+            "end": "15:50",
+            "duration_minutes": 55,
+            "subject": "DEV",
+            "subject_full": "Data Exploration and Visualization",
+            "room": "206"
+          },
+          {
+            "start": "15:50",
+            "end": "16:45",
+            "duration_minutes": 55,
+            "subject": "OOMD",
+            "subject_full": "Object Oriented Modelling",
+            "room": "206"
+          }
+        ],
+        "WED": [
+          {
+            "start": "12:10",
+            "end": "14:00",
+            "duration_minutes": 110,
+            "subject": "OOMD LAB",
+            "subject_full": "Object Oriented Modelling Lab",
+            "room": "Lab-501"
+          },
+          {
+            "start": "14:55",
+            "end": "15:50",
+            "duration_minutes": 55,
+            "subject": "CN",
+            "subject_full": "Computer Networks",
+            "room": "205"
+          },
+          {
+            "start": "15:50",
+            "end": "16:45",
+            "duration_minutes": 55,
+            "subject": "AI",
+            "subject_full": "Artificial Intelligence",
+            "room": "205"
+          }
+        ],
+        "THU": [
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "PE",
+            "subject_full": "Professional Elective",
+            "room": null
+          },
+          {
+            "start": "12:10",
+            "end": "14:00",
+            "duration_minutes": 110,
+            "subject": "CN LAB",
+            "subject_full": "Computer Networks Lab",
+            "room": "Lab-501"
+          },
+          {
+            "start": "14:55",
+            "end": "15:50",
+            "duration_minutes": 55,
+            "subject": "CN",
+            "subject_full": "Computer Networks",
+            "room": "206"
+          }
+        ],
+        "FRI": [
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "Seminar/Workshop/Proctor Meet",
+            "subject_full": "Seminar/Workshop/Proctor Meet",
+            "room": null
+          },
+          {
+            "start": "12:10",
+            "end": "14:00",
+            "duration_minutes": 110,
+            "subject": "CC LAB",
+            "subject_full": "Cloud Computing Lab",
+            "room": "Lab-3"
+          },
+          {
+            "start": "14:55",
+            "end": "16:45",
+            "duration_minutes": 110,
+            "subject": "DEV-T",
+            "subject_full": "DEV Tutorial",
+            "room": "204"
+          }
+        ],
+        "SAT": [
+          {
+            "start": "09:50",
+            "end": "10:45",
+            "duration_minutes": 55,
+            "subject": "AI",
+            "subject_full": "Artificial Intelligence",
+            "room": "209"
+          },
+          {
+            "start": "11:15",
+            "end": "13:05",
+            "duration_minutes": 110,
+            "subject": "AI LAB",
+            "subject_full": "Artificial Intelligence Lab",
+            "room": "Lab1-2"
+          }
+        ]
+      }
     },
-    "Sunday": {
-      "08:00": "Holiday"
-    }
-  },
-  "3B2": {
-    "Monday": {
-      "08:00": "DBMS [ISE 501]",
-      "08:55": "DMS [ISE 501]",
-      "10:20": "FSD LAB [LAB-3] (B1-ASG, B2-STL, B3-KTJ, B4-PCH)",
-      "14:00": "DS [204]",
-      "14:55": "DLCO [204]",
-      "15:50": "OOPS [204]"
+    "5B2": {
+      "semester": 5,
+      "section_alias": "5G",
+      "timetable": {
+        "MON": [
+          {
+            "start": "11:15",
+            "end": "13:05",
+            "duration_minutes": 110,
+            "subject": "CC LAB",
+            "subject_full": "Cloud Computing Lab",
+            "room": "L-502"
+          },
+          {
+            "start": "13:05",
+            "end": "14:00",
+            "duration_minutes": 55,
+            "subject": "PE",
+            "subject_full": "Professional Elective",
+            "room": null
+          },
+          {
+            "start": "14:55",
+            "end": "16:45",
+            "duration_minutes": 110,
+            "subject": "DEV-T",
+            "subject_full": "DEV Tutorial",
+            "room": "205"
+          }
+        ],
+        "TUE": [
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "PE",
+            "subject_full": "Professional Elective",
+            "room": null
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "CN",
+            "subject_full": "Computer Networks",
+            "room": "201"
+          },
+          {
+            "start": "13:05",
+            "end": "14:00",
+            "duration_minutes": 55,
+            "subject": "OOMD",
+            "subject_full": "Object Oriented Modelling",
+            "room": "201"
+          },
+          {
+            "start": "14:55",
+            "end": "16:45",
+            "duration_minutes": 110,
+            "subject": "BIS LAB",
+            "subject_full": "Bio Inspired Systems Lab",
+            "room": "Lab-3"
+          }
+        ],
+        "WED": [
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "CN",
+            "subject_full": "Computer Networks",
+            "room": "206"
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "Seminar/Workshop/Proctor Meet",
+            "subject_full": "Seminar/Workshop/Proctor Meet",
+            "room": null
+          },
+          {
+            "start": "13:05",
+            "end": "14:00",
+            "duration_minutes": 55,
+            "subject": "DEV",
+            "subject_full": "Data Exploration and Visualization",
+            "room": "206"
+          }
+        ],
+        "THU": [
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "PE",
+            "subject_full": "Professional Elective",
+            "room": null
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "OOMD",
+            "subject_full": "Object Oriented Modelling",
+            "room": "205"
+          },
+          {
+            "start": "13:05",
+            "end": "14:00",
+            "duration_minutes": 55,
+            "subject": "AI",
+            "subject_full": "Artificial Intelligence",
+            "room": "205"
+          },
+          {
+            "start": "14:55",
+            "end": "16:45",
+            "duration_minutes": 110,
+            "subject": "CN LAB",
+            "subject_full": "Computer Networks Lab",
+            "room": "Lab 3"
+          }
+        ],
+        "FRI": [
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "AI",
+            "subject_full": "Artificial Intelligence",
+            "room": "604"
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "CN",
+            "subject_full": "Computer Networks",
+            "room": "604"
+          },
+          {
+            "start": "13:05",
+            "end": "14:00",
+            "duration_minutes": 55,
+            "subject": "AI",
+            "subject_full": "Artificial Intelligence",
+            "room": "604"
+          },
+          {
+            "start": "14:55",
+            "end": "16:45",
+            "duration_minutes": 110,
+            "subject": "AI LAB",
+            "subject_full": "Artificial Intelligence Lab",
+            "room": "Lab 3"
+          }
+        ],
+        "SAT": [
+          {
+            "start": "09:50",
+            "end": "10:45",
+            "duration_minutes": 55,
+            "subject": "DEV",
+            "subject_full": "Data Exploration and Visualization",
+            "room": "201"
+          },
+          {
+            "start": "11:15",
+            "end": "13:05",
+            "duration_minutes": 110,
+            "subject": "OOMD LAB",
+            "subject_full": "Object Oriented Modelling Lab",
+            "room": "Lab 3"
+          }
+        ]
+      }
     },
-    "Tuesday": {
-      "08:00": "DS [7F-MBA-CR2]",
-      "08:55": "DLCO [7F-MBA-CR2]",
-      "10:20": "OOPS [7F-MBA-CR2]",
-      "11:15": "DLCO [201]",
-      "12:10": "DMS-T [201]",
-      "14:00": "DBMS LAB [LAB-3] (B1-EN, B2-SYT, B3-MAT, B4-TD)"
+    "5B3": {
+      "semester": 5,
+      "section_alias": "5N",
+      "timetable": {
+        "MON": [
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "CN",
+            "subject_full": "Computer Networks",
+            "room": "206"
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "OOMD",
+            "subject_full": "Object Oriented Modelling",
+            "room": "206"
+          },
+          {
+            "start": "13:05",
+            "end": "14:00",
+            "duration_minutes": 55,
+            "subject": "PE",
+            "subject_full": "Professional Elective",
+            "room": null
+          },
+          {
+            "start": "14:55",
+            "end": "16:45",
+            "duration_minutes": 110,
+            "subject": "OOMD LAB",
+            "subject_full": "Object Oriented Modelling Lab",
+            "room": "Lab1-2"
+          }
+        ],
+        "TUE": [
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "PE",
+            "subject_full": "Professional Elective",
+            "room": null
+          },
+          {
+            "start": "12:10",
+            "end": "14:00",
+            "duration_minutes": 110,
+            "subject": "CC LAB",
+            "subject_full": "Cloud Computing Lab",
+            "room": "Lab 3"
+          },
+          {
+            "start": "14:55",
+            "end": "15:50",
+            "duration_minutes": 55,
+            "subject": "OOMD",
+            "subject_full": "Object Oriented Modelling",
+            "room": "205"
+          },
+          {
+            "start": "15:50",
+            "end": "16:45",
+            "duration_minutes": 55,
+            "subject": "AI",
+            "subject_full": "Artificial Intelligence",
+            "room": "205"
+          }
+        ],
+        "WED": [
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "Seminar/Workshop/Proctor Meet",
+            "subject_full": "Seminar/Workshop/Proctor Meet",
+            "room": null
+          },
+          {
+            "start": "12:10",
+            "end": "14:00",
+            "duration_minutes": 110,
+            "subject": "CN LAB",
+            "subject_full": "Computer Networks Lab",
+            "room": "Lab 3"
+          },
+          {
+            "start": "14:55",
+            "end": "16:45",
+            "duration_minutes": 110,
+            "subject": "DEV-T",
+            "subject_full": "DEV Tutorial",
+            "room": "201"
+          }
+        ],
+        "THU": [
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "PE",
+            "subject_full": "Professional Elective",
+            "room": null
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "DEV",
+            "subject_full": "Data Exploration and Visualization",
+            "room": "220"
+          },
+          {
+            "start": "13:05",
+            "end": "14:00",
+            "duration_minutes": 55,
+            "subject": "CN",
+            "subject_full": "Computer Networks",
+            "room": "206"
+          },
+          {
+            "start": "14:55",
+            "end": "16:45",
+            "duration_minutes": 110,
+            "subject": "AI LAB",
+            "subject_full": "Artificial Intelligence Lab",
+            "room": "Lab 502"
+          }
+        ],
+        "FRI": [
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "AI",
+            "subject_full": "Artificial Intelligence",
+            "room": "205"
+          },
+          {
+            "start": "12:10",
+            "end": "14:00",
+            "duration_minutes": 110,
+            "subject": "BIS LAB",
+            "subject_full": "Bio Inspired Systems Lab",
+            "room": "Lab 501"
+          },
+          {
+            "start": "14:55",
+            "end": "15:50",
+            "duration_minutes": 55,
+            "subject": "CN",
+            "subject_full": "Computer Networks",
+            "room": "201"
+          }
+        ],
+        "SAT": [
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "DEV",
+            "subject_full": "Data Exploration and Visualization",
+            "room": "206"
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "AI",
+            "subject_full": "Artificial Intelligence",
+            "room": "206"
+          }
+        ]
+      }
     },
-    "Wednesday": {
-      "08:00": "OOPS [205]",
-      "08:55": "DBMS [205]",
-      "10:20": "OOPS LAB [LAB-501] (B1-PK, B2-YGM, B3-KTJ, B4-FAS)",
-      "14:00": "DS [213]"
+    "5B4": {
+      "semester": 5,
+      "section_alias": "5Q",
+      "timetable": {
+        "MON": [
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "AI",
+            "subject_full": "Artificial Intelligence",
+            "room": "5-ISE-504"
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "DEV",
+            "subject_full": "Data Exploration and Visualization",
+            "room": "5-ISE-504"
+          },
+          {
+            "start": "13:05",
+            "end": "14:00",
+            "duration_minutes": 55,
+            "subject": "PE",
+            "subject_full": "Professional Elective",
+            "room": null
+          },
+          {
+            "start": "14:55",
+            "end": "16:45",
+            "duration_minutes": 110,
+            "subject": "AI LAB",
+            "subject_full": "Artificial Intelligence Lab",
+            "room": "Lab 502"
+          }
+        ],
+        "TUE": [
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "PE",
+            "subject_full": "Professional Elective",
+            "room": null
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "CN",
+            "subject_full": "Computer Networks",
+            "room": "206"
+          },
+          {
+            "start": "13:05",
+            "end": "14:00",
+            "duration_minutes": 55,
+            "subject": "AI",
+            "subject_full": "Artificial Intelligence",
+            "room": "206"
+          },
+          {
+            "start": "14:55",
+            "end": "16:45",
+            "duration_minutes": 110,
+            "subject": "CN LAB",
+            "subject_full": "Computer Networks Lab",
+            "room": "Lab1-2"
+          }
+        ],
+        "WED": [
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "OOMD",
+            "subject_full": "Object Oriented Modelling",
+            "room": "204"
+          },
+          {
+            "start": "12:10",
+            "end": "14:00",
+            "duration_minutes": 110,
+            "subject": "DEV-T",
+            "subject_full": "DEV Tutorial",
+            "room": "204"
+          },
+          {
+            "start": "14:55",
+            "end": "16:45",
+            "duration_minutes": 110,
+            "subject": "OOMD LAB",
+            "subject_full": "Object Oriented Modelling Lab",
+            "room": "Lab 3"
+          }
+        ],
+        "THU": [
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "PE",
+            "subject_full": "Professional Elective",
+            "room": null
+          },
+          {
+            "start": "12:10",
+            "end": "14:00",
+            "duration_minutes": 110,
+            "subject": "BIS LAB",
+            "subject_full": "Bio Inspired Systems Lab",
+            "room": "Lab 3"
+          },
+          {
+            "start": "14:55",
+            "end": "15:50",
+            "duration_minutes": 55,
+            "subject": "OOMD",
+            "subject_full": "Object Oriented Modelling",
+            "room": "201"
+          }
+        ],
+        "FRI": [
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "CN",
+            "subject_full": "Computer Networks",
+            "room": "403"
+          },
+          {
+            "start": "12:10",
+            "end": "14:00",
+            "duration_minutes": 110,
+            "subject": "CC LAB",
+            "subject_full": "Cloud Computing Lab",
+            "room": "CSDS-Lab2"
+          },
+          {
+            "start": "14:55",
+            "end": "15:50",
+            "duration_minutes": 55,
+            "subject": "AI",
+            "subject_full": "Artificial Intelligence",
+            "room": "205"
+          }
+        ],
+        "SAT": [
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "CN",
+            "subject_full": "Computer Networks",
+            "room": "404"
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "DEV",
+            "subject_full": "Data Exploration and Visualization",
+            "room": "404"
+          },
+          {
+            "start": "13:05",
+            "end": "14:00",
+            "duration_minutes": 55,
+            "subject": "Seminar/Workshop/Proctor Meet",
+            "subject_full": "Seminar/Workshop/Proctor Meet",
+            "room": null
+          }
+        ]
+      }
     },
-    "Thursday": {
-      "08:00": "DMS [405 APS]",
-      "14:00": "DBMS [214]",
-      "14:55": "DMS [403 APS]",
-      "15:50": "Seminar / Workshop / Proctor Meet [204]"
-    },
-    "Friday": {
-      "08:00": "DS LAB [ICB LAB] (B1-AMS, B2-BSS, B3-MAT, B4-MAT)",
-      "14:00": "DIP-MATH(A)",
-      "14:55": "DIP-MATH(A)",
-      "15:50": "DIP-MATH(A)"
-    },
-    "Saturday": {
-      "08:00": "Holiday / No Class Scheduled"
-    },
-    "Sunday": {
-      "08:00": "Holiday"
-    }
-  },
-  "3B3": {
-    "Monday": {
-      "08:00": "DBMS [204]",
-      "08:55": "DMS_T [5-ISE-504]",
-      "10:20": "DS [206]",
-      "11:15": "DBMS [201]",
-      "12:10": "OOPS [205]",
-      "14:00": "FSD LAB [LAB-3] (B1-MAT, B2-MMP, B3-MNH, B4-ADI)"
-    },
-    "Tuesday": {
-      "08:00": "OOPS [206]",
-      "10:20": "OOPS LAB [LAB-502] (B1-MNH, B2-MMP, B3-SA, B4-MAT)",
-      "14:00": "DMS [205]",
-      "14:55": "Seminar / Workshop / Proctor Meet"
-    },
-    "Wednesday": {
-      "08:00": "DLCO [106]",
-      "08:55": "DLCO [204]",
-      "10:20": "DS LAB [CSDS LAB2] (B1-PCV, B2-SDS, B3-AMS, B4-SVH)"
-    },
-    "Thursday": {
-      "08:00": "DBMS [201]",
-      "10:20": "OOPS [206]",
-      "11:15": "DS [205]"
-    },
-    "Friday": {
-      "08:00": "DMS [201]",
-      "08:55": "DBMS LAB [LAB-3] (B1-PGP, B2-SGG, B3-MAT, B4-MAT)",
-      "11:15": "DS [206]",
-      "12:10": "DLCO [5-ISE-504]",
-      "14:00": "DIP-MATH(B)",
-      "14:55": "DIP-MATH(B)"
-    },
-    "Saturday": {
-      "08:00": "DMS [205]"
-    },
-    "Sunday": {
-      "08:00": "Holiday"
-    }
-  },
-  "3B4": {
-    "Monday": {
-      "08:00": "DMS_T [206]",
-      "10:20": "DBMS [201]",
-      "11:15": "DS [205]",
-      "12:10": "FSD LAB [LAB-501] (B1-VS, B2-PGP, B3-MRN, B4-MRN)"
-    },
-    "Tuesday": {
-      "08:00": "DMS [205]",
-      "08:55": "OOPS [206]",
-      "10:20": "DBMS LAB [LAB-501] (B1-PGP, B2-PGP, B3-PCH, B4-ARP)",
-      "14:00": "DS [602]",
-      "14:55": "DLCO [602]",
-      "15:50": "DMS [602]"
-    },
-    "Wednesday": {
-      "08:00": "DS LAB [LAB 3] (B1-PCV, B2-VS, B3-AMS, B4-MRN)",
-      "11:15": "DBMS [5-ISE-504]",
-      "14:00": "OOPS [201]",
-      "14:55": "Seminar / Workshop / Proctor Meet",
-      "15:50": "DS [201]"
-    },
-    "Thursday": {
-      "08:00": "OOPS [201]",
-      "08:55": "DBMS [201]",
-      "11:15": "DLCO [5-ISE-504]",
-      "12:10": "DLCO [408]"
-    },
-    "Friday": {
-      "08:00": "DMS [ISE 501]",
-      "10:20": "OOPS LAB [LAB-502] (B1-MMP, B2-PK, B3-SA, B4-STL)",
-      "14:00": "DIP-MATH(B)",
-      "14:55": "DIP-MATH(B)"
-    },
-    "Saturday": {
-      "08:00": "Holiday / No Class Scheduled"
-    },
-    "Sunday": {
-      "08:00": "Holiday"
-    }
-  },
-  "3B5": {
-    "Monday": {
-      "08:00": "OOPS [201]",
-      "08:55": "DLCO [204]",
-      "10:20": "DS [216]",
-      "11:15": "DBMS [216]",
-      "12:10": "DMS [216]"
-    },
-    "Tuesday": {
-      "08:00": "DS [206]",
-      "08:55": "DLCO [206]",
-      "10:20": "OOPS LAB [LAB-3] (B1-PK, B2-SVA, B3-SGG, B4-SGG)",
-      "12:10": "Seminar / Workshop / Proctor Meet",
-      "14:00": "DMS_T [5-ISE-504]"
-    },
-    "Wednesday": {
-      "08:00": "OOPS [205]",
-      "08:55": "DBMS [201]",
-      "10:20": "DS LAB [LAB 501] (B1-BSS, B2-KTJ, B3-STL, B4-FAS)",
-      "12:10": "DLCO [601]",
-      "14:00": "DMS [205]"
-    },
-    "Thursday": {
-      "08:55": "OOPS [206]",
-      "10:20": "FSD LAB [LAB-504] (B1-PGP, B2-SVH, B3-ARP, B4-NTJ)",
-      "14:00": "DIP-MATH(B)",
-      "14:55": "DIP-MATH(B)"
-    },
-    "Friday": {
-      "08:55": "DBMS [205]",
-      "10:20": "DMS [201]",
-      "11:15": "DS [205]",
-      "12:10": "DBMS LAB [LAB-3] (B1-SGG, B2-SYT, B3-SVA, B4-KBK)"
-    },
-    "Saturday": {
-      "08:00": "Holiday / No Class Scheduled"
-    },
-    "Sunday": {
-      "08:00": "Holiday"
-    }
-  },
-  "5B1": {
-    "Monday": {
-      "09:50": "DEV [201]",
-      "10:45": "OOMD [201]",
-      "11:15": "Professional Elective (PE)",
-      "12:10": "BIS LAB [Lab-3] (B1-SYT, B2-RM, B3-MMP, B4-PGP)"
-    },
-    "Tuesday": {
-      "09:50": "AI [205]",
-      "10:45": "CN [205]",
-      "11:15": "Professional Elective (PE)",
-      "12:10": "DEV [206]",
-      "13:05": "OOMD [206]"
-    },
-    "Wednesday": {
-      "09:50": "OOMD LAB [Lab-501] (B1-SVA, B2-SYT, B3-FAS, B4-FAS)",
-      "14:00": "AI [205]",
-      "14:55": "CN [205]"
-    },
-    "Thursday": {
-      "09:50": "CN LAB [Lab-501] (B1-YGM, B2-YGM, B3-KTJ, B4-AHM)",
-      "11:15": "Professional Elective (PE)",
-      "12:10": "CN [206]"
-    },
-    "Friday": {
-      "09:50": "Seminar / Workshop / Proctor Meet",
-      "10:45": "CC LAB [Lab-3] (B1-MNH, B2-PRS)",
-      "12:10": "DEV-T [204]",
-      "14:00": "AI [209]",
-      "14:55": "AI LAB [Lab1-2] (B1-SWS, B2-KTJ, B3-FAS, B4-KTJ)"
-    },
-    "Saturday": {
-      "08:00": "Holiday / No Class Scheduled"
-    },
-    "Sunday": {
-      "08:00": "Holiday"
-    }
-  },
-  "5B2": {
-    "Monday": {
-      "08:00": "CC LAB [Lab-502] (B1-KTJ, B2-PCV)",
-      "08:55": "Professional Elective (PE)",
-      "09:50": "DEV-T [205]",
-      "14:00": "AI [604]",
-      "14:55": "CN [604]",
-      "15:50": "AI [604]"
-    },
-    "Tuesday": {
-      "08:55": "Professional Elective (PE)",
-      "09:50": "CN [201]",
-      "10:45": "OOMD [201]",
-      "14:00": "OOMD LAB [Lab-3] (B1-SVA, B2-MJ, B3-SGG, B4-SGG)"
-    },
-    "Wednesday": {
-      "08:55": "CN [206]",
-      "09:50": "Professional Elective (PE)",
-      "10:45": "Seminar / Workshop / Proctor Meet",
-      "14:00": "BIS LAB [Lab-3] (B1-SWS, B2-MMP, B3-MRN, B4-SGG)"
-    },
-    "Thursday": {
-      "08:55": "OOMD [205]",
-      "09:50": "DEV [206]",
-      "10:45": "AI [205]",
-      "14:00": "CN LAB [Lab-3] (B1-YGM, B2-RM, B3-MAT, B4-MRN)"
-    },
-    "Friday": {
-      "14:00": "AI LAB [Lab-3] (B1-SWS, B2-MJ, B3-KTJ, B4-KTJ)"
-    },
-    "Saturday": {
-      "08:00": "DEV [201]"
-    },
-    "Sunday": {
-      "08:00": "Holiday"
-    }
-  },
-  "5B3": {
-    "Monday": {
-      "09:50": "CN [206]",
-      "10:45": "Professional Elective (PE)",
-      "11:15": "Seminar / Workshop / Proctor Meet",
-      "12:10": "Professional Elective (PE)",
-      "13:05": "AI [205]",
-      "14:00": "OOMD LAB [Lab1-2] (B1-MJ, B2-SVA, B3-BSS, B4-YGM)"
-    },
-    "Tuesday": {
-      "09:50": "OOMD [206]",
-      "10:45": "Professional Elective (PE)",
-      "11:15": "CC LAB [Lab-3] (B1-VS, B2-PCV)",
-      "14:00": "AI [205]",
-      "14:55": "OOMD [205]",
-      "15:50": "DEV-T [201]"
-    },
-    "Wednesday": {
-      "09:50": "CN LAB [Lab-3] (B1-RM, B2-AHM, B3-MRN, B4-MRP)",
-      "11:15": "CN [206]",
-      "12:10": "DEV [220]",
-      "14:00": "AI LAB [Lab-502] (B1-PCH, B2-KTJ, B3-STL, B4-STL)"
-    },
-    "Thursday": {
-      "08:00": "BIS LAB [Lab-501] (B1-PCH, B2-AMS, B3-RM, B4-VS)",
-      "14:00": "CN [201]"
-    },
-    "Friday": {
-      "08:00": "Holiday / No Class Scheduled"
-    },
-    "Saturday": {
-      "11:15": "DEV [206]",
-      "12:10": "AI [206]"
-    },
-    "Sunday": {
-      "08:00": "Holiday"
-    }
-  },
-  "5B4": {
-    "Monday": {
-      "10:45": "AI [5-ISE-504]",
-      "11:15": "Professional Elective (PE)",
-      "12:10": "OOMD [204]",
-      "13:05": "DEV [5-ISE-504]",
-      "14:00": "AI LAB [Lab-502] (B1-PCH, B2-MRN, B3-KTJ, B4-KTJ)"
-    },
-    "Tuesday": {
-      "10:45": "Professional Elective (PE)",
-      "11:15": "AI [206]",
-      "12:10": "CN [206]",
-      "13:05": "DEV-T [204]",
-      "14:00": "CN LAB [Lab1-2] (B1-RM, B2-STL, B3-STL, B4-BRH)"
-    },
-    "Wednesday": {
-      "14:00": "OOMD LAB [Lab-3] (B1-MJ, B2-MAT, B3-RM, B4-YGM)"
-    },
-    "Thursday": {
-      "10:45": "Professional Elective (PE)",
-      "11:15": "BIS LAB [Lab-3] (B1-AMS, B2-MJ, B3-STL, B4-STL)",
-      "14:00": "OOMD [201]"
-    },
-    "Friday": {
-      "11:15": "CN [403]",
-      "12:10": "CC LAB [CSDS-Lab2] (B1-KTJ, B2-MAT)",
-      "14:00": "AI [205]"
-    },
-    "Saturday": {
-      "11:15": "CN [404]",
-      "12:10": "Seminar / Workshop / Proctor Meet",
-      "13:05": "DEV [404]"
-    },
-    "Sunday": {
-      "08:00": "Holiday"
-    }
-  },
-  "5B5": {
-    "Monday": {
-      "10:20": "CN [5-ISE-504]",
-      "11:15": "Seminar / Workshop / Proctor Meet",
-      "12:10": "AI [205]",
-      "13:05": "Professional Elective (PE)",
-      "14:00": "BIS LAB [Lab-501] (B1-ASG, B2-SGG, B3-FAS, B4-SVH)"
-    },
-    "Tuesday": {
-      "08:00": "OOMD [204]",
-      "11:15": "AI [204]",
-      "12:10": "Professional Elective (PE)",
-      "13:05": "DEV [204]",
-      "14:00": "CN LAB [Lab-501] (B1-YGM, B2-SVH, B3-MAT, B4-MAT)"
-    },
-    "Wednesday": {
-      "08:00": "OOMD LAB [Lab-502] (B1-MAT, B2-SWS, B3-SVH, B4-ARP)",
-      "12:10": "OOMD [201]",
-      "13:05": "CN [303]",
-      "14:00": "CC LAB [LAB 1] (B1-SGG, B2-MRN)"
-    },
-    "Thursday": {
-      "11:15": "Professional Elective (PE)",
-      "12:10": "DEV-T [204]",
-      "13:05": "DEV [201]",
-      "14:00": "AI LAB [Lab-501] (B1-KOS, B2-SWS, B3-FAS, B4-FAS)"
-    },
-    "Friday": {
-      "11:15": "AI [204]",
-      "14:00": "CN [206]"
-    },
-    "Saturday": {
-      "08:00": "Holiday / No Class Scheduled"
-    },
-    "Sunday": {
-      "08:00": "Holiday"
+    "5B5": {
+      "semester": 5,
+      "section_alias": "5V",
+      "timetable": {
+        "MON": [
+          {
+            "start": "10:20",
+            "end": "11:15",
+            "duration_minutes": 55,
+            "subject": "CN",
+            "subject_full": "Computer Networks",
+            "room": "5-ISE-504"
+          },
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "Seminar/Workshop/Proctor Meet",
+            "subject_full": "Seminar/Workshop/Proctor Meet",
+            "room": null
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "AI",
+            "subject_full": "Artificial Intelligence",
+            "room": "205"
+          },
+          {
+            "start": "13:05",
+            "end": "14:00",
+            "duration_minutes": 55,
+            "subject": "PE",
+            "subject_full": "Professional Elective",
+            "room": null
+          },
+          {
+            "start": "14:55",
+            "end": "16:45",
+            "duration_minutes": 110,
+            "subject": "BIS LAB",
+            "subject_full": "Bio Inspired Systems Lab",
+            "room": "Lab 501"
+          }
+        ],
+        "TUE": [
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "PE",
+            "subject_full": "Professional Elective",
+            "room": null
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "AI",
+            "subject_full": "Artificial Intelligence",
+            "room": "204"
+          },
+          {
+            "start": "13:05",
+            "end": "14:00",
+            "duration_minutes": 55,
+            "subject": "DEV",
+            "subject_full": "Data Exploration and Visualization",
+            "room": "204"
+          },
+          {
+            "start": "14:55",
+            "end": "16:45",
+            "duration_minutes": 110,
+            "subject": "CN LAB",
+            "subject_full": "Computer Networks Lab",
+            "room": "Lab 501"
+          }
+        ],
+        "WED": [
+          {
+            "start": "11:15",
+            "end": "13:05",
+            "duration_minutes": 110,
+            "subject": "OOMD LAB",
+            "subject_full": "Object Oriented Modelling Lab",
+            "room": "Lab-502"
+          },
+          {
+            "start": "13:05",
+            "end": "14:00",
+            "duration_minutes": 55,
+            "subject": "CN",
+            "subject_full": "Computer Networks",
+            "room": "303"
+          },
+          {
+            "start": "14:55",
+            "end": "16:45",
+            "duration_minutes": 110,
+            "subject": "CC LAB",
+            "subject_full": "Cloud Computing Lab",
+            "room": "LAB 1"
+          }
+        ],
+        "THU": [
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "PE",
+            "subject_full": "Professional Elective",
+            "room": null
+          },
+          {
+            "start": "12:10",
+            "end": "13:05",
+            "duration_minutes": 55,
+            "subject": "OOMD",
+            "subject_full": "Object Oriented Modelling",
+            "room": "201"
+          },
+          {
+            "start": "13:05",
+            "end": "14:00",
+            "duration_minutes": 55,
+            "subject": "DEV",
+            "subject_full": "Data Exploration and Visualization",
+            "room": "201"
+          },
+          {
+            "start": "14:55",
+            "end": "16:45",
+            "duration_minutes": 110,
+            "subject": "AI LAB",
+            "subject_full": "Artificial Intelligence Lab",
+            "room": "Lab-501"
+          }
+        ],
+        "FRI": [
+          {
+            "start": "10:20",
+            "end": "11:15",
+            "duration_minutes": 55,
+            "subject": "OOMD",
+            "subject_full": "Object Oriented Modelling",
+            "room": "204"
+          },
+          {
+            "start": "11:15",
+            "end": "12:10",
+            "duration_minutes": 55,
+            "subject": "AI",
+            "subject_full": "Artificial Intelligence",
+            "room": "204"
+          },
+          {
+            "start": "12:10",
+            "end": "14:00",
+            "duration_minutes": 110,
+            "subject": "DEV-T",
+            "subject_full": "DEV Tutorial",
+            "room": "204"
+          },
+          {
+            "start": "14:55",
+            "end": "15:50",
+            "duration_minutes": 55,
+            "subject": "CN",
+            "subject_full": "Computer Networks",
+            "room": "206"
+          }
+        ],
+        "SAT": []
+      }
     }
   }
 }

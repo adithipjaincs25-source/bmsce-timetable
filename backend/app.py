@@ -16,16 +16,14 @@ try:
 except Exception as e:
     timetable_data = {}
 
-# Strict Section and Alternate Alias Mapping
+# Section Aliases strictly mapped to PDF documents
 SECTION_ALIASES = {
-    # 3rd Semester
     "3D": "3B1", "3B1": "3B1", "D": "3B1",
     "3G": "3B2", "3B2": "3B2", "G": "3B2",
     "3N": "3B3", "3B3": "3B3", "N": "3B3",
     "3Q": "3B4", "3B4": "3B4", "Q": "3B4",
     "3V": "3B5", "3B5": "3B5", "V": "3B5",
 
-    # 5th Semester
     "5D": "5B1", "5B1": "5B1",
     "5G": "5B2", "5B2": "5B2",
     "5N": "5B3", "5B3": "5B3",
@@ -42,7 +40,7 @@ def time_to_minutes(time_str):
     return h * 60 + m
 
 SLOT_DURATIONS = {
-    "08:00": 55, "08:55": 55, "09:50": 30, "10:20": 55,
+    "08:00": 55, "08:55": 55, "09:50": 55, "10:20": 55,
     "10:45": 30, "11:15": 55, "12:10": 55, "13:05": 55,
     "14:00": 110, "14:55": 55, "15:50": 55, "16:45": 55
 }
@@ -51,13 +49,10 @@ def get_active_class_for_section(section_name, day, current_mins):
     section_key = resolve_section_key(section_name)
     day_schedule = timetable_data.get(section_key, {}).get(day, {})
     
-    if day == "Sunday" or day_schedule.get("08:00") == "Holiday / No Class Scheduled":
+    if day == "Sunday":
         return "Holiday / No Class Scheduled"
 
     for start_time_str, subject in day_schedule.items():
-        if start_time_str == "08:00" and "Holiday" in subject:
-            continue
-            
         start_mins = time_to_minutes(start_time_str)
         duration = SLOT_DURATIONS.get(start_time_str, 55)
         
