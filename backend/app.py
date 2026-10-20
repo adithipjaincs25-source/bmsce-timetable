@@ -9,14 +9,15 @@ CORS(app)
 # Explicitly enforce Indian Standard Time (+05:30)
 IST = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
 
-# Load Timetable Data
+# Load JSON Data with support for nested 'classes' root key
 try:
     with open('data.json', 'r') as file:
-        timetable_data = json.load(file)
+        raw_data = json.load(file)
+        classes_data = raw_data.get("classes", raw_data)
 except Exception as e:
-    timetable_data = {}
+    classes_data = {}
 
-# Section Aliases strictly mapped to PDF documents
+# Section Aliases mapped to document designations
 SECTION_ALIASES = {
     "3D": "3B1", "3B1": "3B1", "D": "3B1",
     "3G": "3B2", "3B2": "3B2", "G": "3B2",
@@ -26,10 +27,22 @@ SECTION_ALIASES = {
 
     "5D": "5B1", "5B1": "5B1",
     "5G": "5B2", "5B2": "5B2",
-    "5N": "5B3", "5B3": "5B3",
+    "5N": "5B3", "5B3": "5B3", "N": "5B3",
     "5O": "5B4", "5B4": "5B4", "O": "5B4",
     "5V": "5B5", "5B5": "5B5"
 }
+
+DAY_MAP = {
+    "Monday": "MON",
+    "Tuesday": "TUE",
+    "Wednesday": "WED",
+    "Thursday": "THU",
+    "Friday": "FRI",
+    "Saturday": "SAT",
+    "Sunday": "SUN"
+}
+
+DAY_REVERSE_MAP = {v: k for k, v in DAY_MAP.items()}
 
 def resolve_section_key(sec_name):
     clean_name = sec_name.strip().upper()
@@ -39,28 +52,30 @@ def time_to_minutes(time_str):
     h, m = map(int, time_str.split(':'))
     return h * 60 + m
 
-SLOT_DURATIONS = {
-    "08:00": 55, "08:55": 55, "09:50": 55, "10:20": 55,
-    "10:45": 30, "11:15": 55, "12:10": 55, "13:05": 55,
-    "14:00": 110, "14:55": 55, "15:50": 55, "16:45": 55
-}
+def format_subject_display(slot):
+    sub = slot.get('subject', 'Class')
+    room = slot.get('room')
+    if room:
+        return f"{sub} [{room}]"
+    return sub
 
-def get_active_class_for_section(section_name, day, current_mins):
+def get_active_class_for_section(section_name, day_full_name, current_mins):
     section_key = resolve_section_key(section_name)
-    day_schedule = timetable_data.get(section_key, {}).get(day, {})
+    sec_info = classes_data.get(section_key, {})
+    timetable = sec_info.get("timetable", {})
     
-    if day == "Sunday":
-        return "Holiday / No Class Scheduled"
+    day_code = DAY_MAP.get(day_full_name, day_full_name[:3].upper())
+    day_slots = timetable.get(day_code, [])
 
-    for start_time_str, subject in day_schedule.items():
-        start_mins = time_to_minutes(start_time_str)
-        duration = SLOT_DURATIONS.get(start_time_str, 55)
+    if day_full_name == "Sunday" or not day_slots:
+        return "Free / No Scheduled Class"
+
+    for slot in day_slots:
+        start_mins = time_to_minutes(slot['start'])
+        end_mins = time_to_minutes(slot['end'])
         
-        if "LAB" in subject.upper():
-            duration = 110
-
-        if start_mins <= current_mins < (start_mins + duration):
-            return subject
+        if start_mins <= current_mins < end_mins:
+            return format_subject_display(slot)
 
     return "Free / No Scheduled Class"
 
@@ -71,7 +86,7 @@ def serve_ui():
 @app.route('/api/section/<section_name>/current', methods=['GET'])
 def get_current_class(section_name):
     section_key = resolve_section_key(section_name)
-    if section_key not in timetable_data:
+    if section_key not in classes_data:
         return jsonify({"success": False, "error": f"Section '{section_name}' not found"}), 404
         
     now = datetime.datetime.now(IST)
@@ -91,14 +106,24 @@ def get_current_class(section_name):
 @app.route('/api/section/<section_name>/schedule', methods=['GET'])
 def get_section_schedule(section_name):
     section_key = resolve_section_key(section_name)
-    if section_key not in timetable_data:
+    if section_key not in classes_data:
         return jsonify({"success": False, "error": f"Section '{section_name}' not found"}), 404
         
     requested_day = request.args.get('day')
-    section_dict = timetable_data.get(section_key, {})
+    sec_info = classes_data.get(section_key, {})
+    timetable = sec_info.get("timetable", {})
+
+    full_formatted_timetable = {}
+    for day_code, slots in timetable.items():
+        full_day_name = DAY_REVERSE_MAP.get(day_code, day_code)
+        day_dict = {}
+        for slot in slots:
+            time_range = f"{slot['start']} - {slot['end']}"
+            day_dict[time_range] = format_subject_display(slot)
+        full_formatted_timetable[full_day_name] = day_dict
 
     if requested_day:
-        day_schedule = section_dict.get(requested_day, {})
+        day_schedule = full_formatted_timetable.get(requested_day, {})
         return jsonify({
             "success": True, 
             "section": section_key, 
@@ -109,7 +134,7 @@ def get_section_schedule(section_name):
     return jsonify({
         "success": True, 
         "section": section_key, 
-        "full_timetable": section_dict
+        "full_timetable": full_formatted_timetable
     })
 
 @app.route('/api/all_sections/current', methods=['POST'])
@@ -123,7 +148,7 @@ def get_all_sections_live():
     current_mins = now.hour * 60 + now.minute
 
     live_dashboard = {}
-    for sec_name in sorted(timetable_data.keys()):
+    for sec_name in sorted(classes_data.keys()):
         live_dashboard[sec_name] = get_active_class_for_section(sec_name, day, current_mins)
 
     return jsonify({
